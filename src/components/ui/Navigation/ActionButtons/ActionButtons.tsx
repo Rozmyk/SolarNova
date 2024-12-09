@@ -1,9 +1,16 @@
 import Button from '../../Button/Button'
-
+import { useRouter } from 'next/navigation'
 const ActionButtons = () => {
+	const router = useRouter()
 	return (
 		<div>
-			<Button reverse>Contact</Button>
+			<Button
+				onClick={() => {
+					router.push('/contact')
+				}}
+				reverse>
+				Contact
+			</Button>
 		</div>
 	)
 }
