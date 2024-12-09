@@ -1,9 +1,9 @@
-import Image from 'next/image'
 import { TbCircleArrowUpRightFilled } from 'react-icons/tb'
 
-const Button = ({ children, reverse }: { children: string; reverse?: boolean }) => {
+const Button = ({ children, reverse, onClick }: { children: string; reverse?: boolean; onClick: () => void }) => {
 	return reverse ? (
 		<button
+			onClick={onClick}
 			type='button'
 			className='py-2.5 px-6 text-sm bg-[#f7f7f7] text-[#323332] rounded-full cursor-pointer font-medium text-center shadow-xs transition-all duration-500 hover:bg-stone-200 inline-flex items-center gap-1'>
 			{children}
@@ -11,6 +11,7 @@ const Button = ({ children, reverse }: { children: string; reverse?: boolean }) 
 		</button>
 	) : (
 		<button
+			onClick={onClick}
 			type='button'
 			className='py-2.5 px-6 text-sm bg-primary text-white rounded-full cursor-pointer font-medium text-center shadow-xs transition-all duration-500 hover:bg-accent inline-flex items-center gap-1'>
 			{children}
