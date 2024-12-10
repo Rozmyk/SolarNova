@@ -1,6 +1,7 @@
 import AboutUs from '@/components/AboutUs/AboutUs'
 import Header from '@/components/Header/Header'
 import Solutions from '@/components/Solutions/Solutions'
+import Projects from '@/components/Projects/projects'
 export default function Home() {
 	return (
 		<>
@@ -8,6 +9,7 @@ export default function Home() {
 
 			<AboutUs />
 			<Solutions />
+			<Projects />
 			<div className='h-screen '></div>
 		</>
 	)
