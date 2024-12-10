@@ -23,7 +23,7 @@ const SingleCard = ({ src, icon: Icon, title, text }: SingleCardProps) => {
 			<div className='h-full w-full absolute top-0 bottom-0 left-0 right-0 bg-[#123520] opacity-90 z-10 '></div>
 
 			<div className='z-20 relative flex flex-col justify-between items-start h-full'>
-				<Icon size={35} className='mb-4' />
+				<Icon size={40} className='mb-4' />
 				<div>
 					<h4 className='font-semibold capitalize'>{title}</h4>
 					<p className='text-white opacity-80 text-sm font-medium'>{text}</p>
