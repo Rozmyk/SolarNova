@@ -1,10 +1,14 @@
+import AboutUs from '@/components/AboutUs/AboutUs'
 import Header from '@/components/Header/Header'
-import Wrapper from '@/components/Wrapper/Wrapper'
+import Solutions from '@/components/Solutions/Solutions'
 export default function Home() {
 	return (
 		<>
 			<Header />
-			<div className='h-screen'></div>
+
+			<AboutUs />
+			<Solutions />
+			<div className='h-screen '></div>
 		</>
 	)
 }
