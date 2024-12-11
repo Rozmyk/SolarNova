@@ -5,12 +5,13 @@ const SingleAvatar = ({ src, alt }: { src: string; alt: string }) => {
 }
 const HeaderImage = () => {
 	return (
-		<div className='relative  w-full md:w-1/3 '>
+		<div className='relative  w-full md:w-1/3 mb-40 md:mb-0 '>
 			<div className='absolute top-2 right-6'>
 				<GoNorthStar size={100} color='#40cb7f' />
 			</div>
 
-			<Image width={750} height={500} alt='mężczyzna montuje panel fotowoltaiczny' src={'/headerImage.png'} />
+			<Image width={750} height={500} alt='Wind turbine ' src={'/headerImage.png'} />
+
 			<div className='w-36 h-36 absolute bottom-[-72px] md:bottom-10 left-1/2 translate-x-[-50%] md:left-[-75px] md:translate-x-0 backdrop-blur-lg bg-white bg-opacity-60 flex flex-col justify-center items-center rounded-md shadow-lg'>
 				<div className='flex -space-x-1 overflow-hidden mb-2'>
 					<SingleAvatar src='/customerAvatar1.jpg' alt='portrait of a woman' />
