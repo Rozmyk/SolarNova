@@ -8,7 +8,7 @@ import { Pagination, Autoplay } from 'swiper/modules'
 import testimonialsData from '../../../../data/testimonialsData'
 import 'swiper/css'
 import 'swiper/css/pagination'
-
+import './swiper.css'
 const SingleTestimonials = ({
 	src,
 	opinion,
@@ -24,11 +24,11 @@ const SingleTestimonials = ({
 }) => {
 	return (
 		<div
-			className={`bg-[#f6f8f6] rounded-lg p-4 text-secondary text-sm w-64 flex  drop-shadow-md ${
+			className={`bg-[#f7f9f6] rounded-lg p-4 text-secondary text-sm w-64 flex   ${
 				reversed ? 'flex-col-reverse' : 'flex-col'
 			} ${reversed ? 'mt-8' : 'mb-8'}`}>
 			<div className={`w-full h-32 relative ${reversed ? 'mt-4' : 'mb-4'} rounded-lg overflow-hidden`}>
-				<Image src={src} fill alt='customer avatar' />
+				<Image src={src} layout='fill' objectFit='cover' objectPosition='center' alt='customer avatar' />
 			</div>
 			<div>
 				<p className='mb-4 font-medium'>{opinion}</p>
@@ -39,12 +39,6 @@ const SingleTestimonials = ({
 	)
 }
 const Clients = () => {
-	const pagination = {
-		clickable: true,
-		renderBullet: function (index, className) {
-			return '<span class="' + className + 'bg-red-500">' + (index + 1) + '</span>'
-		},
-	}
 	return (
 		<Wrapper>
 			<div className='flex md:flex-row flex-col justify-between items-center gap-4 mb-2 p-4'>
@@ -55,7 +49,7 @@ const Clients = () => {
 					<Button>All testimonials</Button>
 				</div>
 			</div>
-			<div className='flex gap-10  p-2 '>
+			<div className='ExampleComponent flex gap-10  p-2 '>
 				<Swiper pagination={true} modules={[Pagination, Autoplay]} autoplay spaceBetween={50} slidesPerView={4}>
 					{testimonialsData.map(card => {
 						return (

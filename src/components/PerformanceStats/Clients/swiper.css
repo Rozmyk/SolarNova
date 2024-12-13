@@ -1,0 +1,12 @@
+.ExampleComponent .swiper-pagination .swiper-pagination-bullet {
+	width: 12px;
+	height: 12px;
+	background-color: #a2c7b1;
+}
+.ExampleComponent .swiper-wrapper {
+	margin-bottom: 100px;
+}
+
+.ExampleComponent .swiper-pagination .swiper-pagination-bullet-active {
+	background-color: #33cb7d;
+}
