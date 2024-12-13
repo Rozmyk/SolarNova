@@ -7,6 +7,7 @@ import { FaUser } from 'react-icons/fa6'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useRef } from 'react'
 import 'swiper/css'
+import { useRouter } from 'next/router'
 
 import projectData from '../../../data/projectsData'
 import CarouselButtons from './CarouselButtons/CarouselButtonts'
@@ -38,6 +39,7 @@ const ProjectCard = ({ src, title, author, date }: { src: string; title: string;
 
 const Projects = () => {
 	const swiperRef = useRef<any>(null)
+	const router = useRouter()
 
 	return (
 		<Wrapper>
@@ -64,7 +66,7 @@ const Projects = () => {
 			<div className='flex justify-center items-center w-full p-4 mt-8'>
 				<Button
 					onClick={() => {
-						swiperRef.current?.slideNext()
+						router.push('/projects')
 					}}>
 					View all projects
 				</Button>
