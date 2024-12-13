@@ -1,15 +1,21 @@
+'use client'
 import Wrapper from '../Wrapper/Wrapper'
 import TitleText from '../ui/TitleText/TitleText'
-import CarouselButtons from './CarouselButtons/CarouselButtonts'
 import Button from '../ui/Button/Button'
 import { MdOutlineDateRange } from 'react-icons/md'
 import { FaUser } from 'react-icons/fa6'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { useRef } from 'react'
+import 'swiper/css'
+
+import projectData from '../../../data/projectsData'
+import CarouselButtons from './CarouselButtons/CarouselButtonts'
 
 const ProjectCard = ({ src, title, author, date }: { src: string; title: string; author: string; date: string }) => {
 	return (
-		<div className=' w-full rounded-xl overflow-hidden '>
+		<div className='w-full rounded-xl overflow-hidden'>
 			<div
-				className=' w-full h-60 rounded-xl'
+				className='w-full h-60 rounded-xl'
 				style={{
 					backgroundImage: `url(${src})`,
 					backgroundSize: 'cover',
@@ -29,7 +35,10 @@ const ProjectCard = ({ src, title, author, date }: { src: string; title: string;
 		</div>
 	)
 }
+
 const Projects = () => {
+	const swiperRef = useRef<any>(null)
+
 	return (
 		<Wrapper>
 			<div className='flex md:flex-row flex-col justify-between items-center gap-4 mb-2 p-4'>
@@ -37,31 +46,28 @@ const Projects = () => {
 					<TitleText>Successful Renewable energy projects</TitleText>
 				</div>
 				<div className='w-full md:w-1/2 flex justify-end'>
-					<CarouselButtons />
+					<CarouselButtons
+						onPrev={() => swiperRef.current?.slidePrev()}
+						onNext={() => swiperRef.current?.slideNext()}
+					/>
 				</div>
 			</div>
 			<div className='p-4 flex w-full gap-4 flex-col md:flex-row'>
-				<ProjectCard
-					src='/projectImage1.jpg'
-					title='Solar Firm & wind turbine'
-					date='December 15, 2024'
-					author='Christopher Jack'
-				/>
-				<ProjectCard
-					src='/projectImage2.jpg'
-					title='Wind turbine project on mountain'
-					date='December 15, 2024'
-					author='Christopher Jack'
-				/>
-				<ProjectCard
-					src='/projectImage3.jpg'
-					title='Hydropower System Project'
-					date='December 15, 2024'
-					author='Christopher Jack'
-				/>
+				<Swiper loop spaceBetween={50} slidesPerView={3} onSwiper={swiper => (swiperRef.current = swiper)}>
+					{projectData.map(project => (
+						<SwiperSlide key={project.title}>
+							<ProjectCard src={project.src} title={project.title} date={project.date} author={project.author} />
+						</SwiperSlide>
+					))}
+				</Swiper>
 			</div>
-			<div className='flex justify-center items-center w-full p-4'>
-				<Button>View all projects</Button>
+			<div className='flex justify-center items-center w-full p-4 mt-8'>
+				<Button
+					onClick={() => {
+						swiperRef.current?.slideNext()
+					}}>
+					View all projects
+				</Button>
 			</div>
 		</Wrapper>
 	)
