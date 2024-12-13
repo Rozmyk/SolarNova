@@ -7,7 +7,7 @@ import { FaUser } from 'react-icons/fa6'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useRef } from 'react'
 import 'swiper/css'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 import projectData from '../../../data/projectsData'
 import CarouselButtons from './CarouselButtons/CarouselButtonts'
