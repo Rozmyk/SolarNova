@@ -1,7 +1,14 @@
+'use client'
 import Wrapper from '@/components/Wrapper/Wrapper'
 import TitleText from '@/components/ui/TitleText/TitleText'
 import Button from '@/components/ui/Button/Button'
 import Image from 'next/image'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination, Autoplay } from 'swiper/modules'
+import testimonialsData from '../../../../data/testimonialsData'
+import 'swiper/css'
+import 'swiper/css/pagination'
+
 const SingleTestimonials = ({
 	src,
 	opinion,
@@ -17,7 +24,7 @@ const SingleTestimonials = ({
 }) => {
 	return (
 		<div
-			className={`bg-[#f6f8f6] rounded-lg p-4 text-secondary text-sm w-64 flex ${
+			className={`bg-[#f6f8f6] rounded-lg p-4 text-secondary text-sm w-64 flex  drop-shadow-md ${
 				reversed ? 'flex-col-reverse' : 'flex-col'
 			} ${reversed ? 'mt-8' : 'mb-8'}`}>
 			<div className={`w-full h-32 relative ${reversed ? 'mt-4' : 'mb-4'} rounded-lg overflow-hidden`}>
@@ -32,6 +39,12 @@ const SingleTestimonials = ({
 	)
 }
 const Clients = () => {
+	const pagination = {
+		clickable: true,
+		renderBullet: function (index, className) {
+			return '<span class="' + className + 'bg-red-500">' + (index + 1) + '</span>'
+		},
+	}
 	return (
 		<Wrapper>
 			<div className='flex md:flex-row flex-col justify-between items-center gap-4 mb-2 p-4'>
@@ -42,35 +55,22 @@ const Clients = () => {
 					<Button>All testimonials</Button>
 				</div>
 			</div>
-			<div className='flex gap-10'>
-				<SingleTestimonials
-					src='/customerAvatar1.jpg'
-					reversed={false}
-					opinion='Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt aliquam architecto itaque expedita fugit. Consectetur atque culpa architecto.'
-					author='Jennifer Kaya'
-					job='Brand Promoter'
-				/>
-				<SingleTestimonials
-					src='/customerAvatar1.jpg'
-					reversed={true}
-					opinion='Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt aliquam architecto itaque expedita fugit. Consectetur atque culpa architecto.'
-					author='Jennifer Kaya'
-					job='Brand Promoter'
-				/>
-				<SingleTestimonials
-					src='/customerAvatar1.jpg'
-					reversed={false}
-					opinion='Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt aliquam architecto itaque expedita fugit. Consectetur atque culpa architecto.'
-					author='Jennifer Kaya'
-					job='Brand Promoter'
-				/>
-				<SingleTestimonials
-					src='/customerAvatar1.jpg'
-					reversed={true}
-					opinion='Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt aliquam architecto itaque expedita fugit. Consectetur atque culpa architecto.'
-					author='Jennifer Kaya'
-					job='Brand Promoter'
-				/>
+			<div className='flex gap-10  p-2 '>
+				<Swiper pagination={true} modules={[Pagination, Autoplay]} autoplay spaceBetween={50} slidesPerView={4}>
+					{testimonialsData.map(card => {
+						return (
+							<SwiperSlide key={card.author}>
+								<SingleTestimonials
+									src={card.src}
+									reversed={card.reversed}
+									opinion={card.opinion}
+									author='Jennifer Kaya'
+									job='Brand Promoter'
+								/>
+							</SwiperSlide>
+						)
+					})}
+				</Swiper>
 			</div>
 		</Wrapper>
 	)
