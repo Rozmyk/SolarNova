@@ -7,7 +7,7 @@ const ActiveLink = ({ href, isActive, children }: { href: string; isActive: bool
 		<li>
 			<Link
 				style={{ color: '#0e2e3d' }}
-				className={`px-2 py-2 rounded-lg  transition-all font-medium ${isActive ? '  ' : ''}`}
+				className={`px-2 py-2 rounded-lg  transition-all font-regular  ${isActive ? '  ' : ''}`}
 				href={href}>
 				{children}
 			</Link>
