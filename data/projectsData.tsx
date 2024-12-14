@@ -1,4 +1,11 @@
-const projectData = [
+interface Project {
+	id: string
+	src: string
+	title: string
+	date: string
+	author: string
+}
+const projectData: Project[] = [
 	{
 		id: 'project-1',
 		src: '/projectImage1.jpg',
