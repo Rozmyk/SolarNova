@@ -50,20 +50,46 @@ const Clients = () => {
 				</div>
 			</div>
 			<div className='ExampleComponent flex gap-10  p-2 '>
-				<Swiper pagination={true} modules={[Pagination, Autoplay]} autoplay spaceBetween={50} slidesPerView={4}>
-					{testimonialsData.map(card => {
-						return (
-							<SwiperSlide key={card.author}>
+				<Swiper
+					breakpoints={{
+						0: {
+							slidesPerView: 1,
+							spaceBetween: 0,
+							centeredSlides: true,
+						},
+						550: {
+							slidesPerView: 2,
+							centeredSlides: false,
+							spaceBetween: 25,
+						},
+						800: {
+							slidesPerView: 3,
+							spaceBetween: 50,
+							centeredSlides: false,
+						},
+						1100: {
+							slidesPerView: 4,
+							spaceBetween: 50,
+							centeredSlides: false,
+						},
+					}}
+					pagination={{ clickable: true }}
+					modules={[Pagination, Autoplay]}
+					autoplay
+					spaceBetween={50}>
+					{testimonialsData.map(card => (
+						<SwiperSlide key={card.author}>
+							<div className=' flex justify-center items-center w-full h-full'>
 								<SingleTestimonials
 									src={card.src}
 									reversed={card.reversed}
 									opinion={card.opinion}
-									author='Jennifer Kaya'
-									job='Brand Promoter'
+									author={card.author}
+									job={card.job}
 								/>
-							</SwiperSlide>
-						)
-					})}
+							</div>
+						</SwiperSlide>
+					))}
 				</Swiper>
 			</div>
 		</Wrapper>

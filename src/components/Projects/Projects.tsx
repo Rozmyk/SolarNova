@@ -29,30 +29,36 @@ const Projects = () => {
 			</div>
 			<div className='p-4 flex w-full gap-4 flex-col md:flex-row'>
 				<Swiper
-					spaceBetween={50}
-					slidesPerView={3}
 					breakpoints={{
 						0: {
 							slidesPerView: 1,
+							centeredSlides: true,
+							spaceBetween: 0,
 						},
-						400: {
+						750: {
 							slidesPerView: 2,
+							centeredSlides: false,
+							spaceBetween: 25,
 						},
 						1100: {
 							slidesPerView: 3,
+							centeredSlides: false,
+							spaceBetween: 50,
 						},
 					}}
 					loop
 					onSwiper={swiper => (swiperRef.current = swiper)}>
 					{projectData.map(project => (
 						<SwiperSlide key={project.title}>
-							<ProjectCard
-								id={project.id}
-								src={project.src}
-								title={project.title}
-								date={project.date}
-								author={project.author}
-							/>
+							<div className='w-full h-full flex justify-center items-center'>
+								<ProjectCard
+									id={project.id}
+									src={project.src}
+									title={project.title}
+									date={project.date}
+									author={project.author}
+								/>
+							</div>
 						</SwiperSlide>
 					))}
 				</Swiper>
