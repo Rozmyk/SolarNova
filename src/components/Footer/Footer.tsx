@@ -1,14 +1,13 @@
 import Wrapper from '../Wrapper/Wrapper'
 import Link from 'next/link'
 import Image from 'next/image'
-import { FaFacebookF, FaInstagram, FaYoutube, FaTelegramPlane } from 'react-icons/fa'
-import { MdMail } from 'react-icons/md'
-
+import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa'
+import Newsletter from './Newsletter/Newsletter'
 const SocialIcon = ({ Icon }: { Icon: React.ComponentType<{ size?: number; className?: string }> }) => {
 	return (
-		<div className='p-2 bg-[#132319] rounded-full flex justify-center items-center'>
+		<Link href={'/'} className='p-2 bg-[#132319] rounded-full flex justify-center items-center'>
 			<Icon size={18} className='text-white' />
-		</div>
+		</Link>
 	)
 }
 const SectionTitle = ({ children }: { children: string }) => {
@@ -46,15 +45,8 @@ const Footer = () => {
 					</div>
 					<div className='flex flex-col items-center md:items-start mb-4 text-sm'>
 						<SectionTitle>Newsletter</SectionTitle>
-						<div className='flex justify-between items-center gap-2 mb-8 '>
-							<div className='flex justify-center items-center border border-#c6cbc9 border-solid p-2 gap-2 rounded-lg'>
-								<MdMail />
-								<input className='bg-transparent text-sm' placeholder='Enter email address '></input>
-							</div>
-							<button className='rounded-lg bg-primary p-2 text-white'>
-								<FaTelegramPlane />
-							</button>
-						</div>
+						<Newsletter />
+
 						<p className='text-sm text-center md:text-start'>
 							We are committed to not share your email or privacy with anyone
 						</p>
