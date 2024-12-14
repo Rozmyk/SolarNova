@@ -28,7 +28,22 @@ const Projects = () => {
 				</div>
 			</div>
 			<div className='p-4 flex w-full gap-4 flex-col md:flex-row'>
-				<Swiper loop spaceBetween={50} slidesPerView={3} onSwiper={swiper => (swiperRef.current = swiper)}>
+				<Swiper
+					spaceBetween={50}
+					slidesPerView={3}
+					breakpoints={{
+						0: {
+							slidesPerView: 1,
+						},
+						400: {
+							slidesPerView: 2,
+						},
+						1100: {
+							slidesPerView: 3,
+						},
+					}}
+					loop
+					onSwiper={swiper => (swiperRef.current = swiper)}>
 					{projectData.map(project => (
 						<SwiperSlide key={project.title}>
 							<ProjectCard
