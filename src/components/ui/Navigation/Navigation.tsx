@@ -1,6 +1,5 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { usePathname } from 'next/navigation'
 import DesktopNav from './DesktopNav/DesktopNav'
 import MobileNav from './MobileNav/MobileNav'
 const Navigation = () => {
