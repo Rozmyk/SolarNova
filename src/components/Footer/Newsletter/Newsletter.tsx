@@ -7,9 +7,9 @@ const Newsletter = () => {
 	return (
 		<div className='flex justify-between items-center gap-2 mb-8 '>
 			{emailSended ? (
-				<>
+				
 					<p className='text-white font-semibold text-lg'>Email added!</p>
-				</>
+				
 			) : (
 				<>
 					<div className='flex justify-center items-center border border-#c6cbc9 border-solid p-2 gap-2 rounded-lg'>
