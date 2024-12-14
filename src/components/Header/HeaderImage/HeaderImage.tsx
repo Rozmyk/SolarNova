@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { GoNorthStar } from 'react-icons/go'
 const SingleAvatar = ({ src, alt }: { src: string; alt: string }) => {
-	return <img className='inline-block size-6 rounded-full ring-2 ring-white' src={src} alt={alt} />
+	return <Image className='inline-block size-6 rounded-full ring-2 ring-white' src={src} alt={alt} />
 }
 const HeaderImage = () => {
 	return (
