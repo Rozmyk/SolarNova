@@ -3,6 +3,8 @@ import Wrapper from '../Wrapper/Wrapper'
 import TitleText from '../ui/TitleText/TitleText'
 import Button from '../ui/Button/Button'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { Swiper as SwiperType } from 'swiper'
+
 import { useRef } from 'react'
 import 'swiper/css'
 import { useRouter } from 'next/navigation'
@@ -11,7 +13,7 @@ import projectData from '../../../data/projectsData'
 import CarouselButtons from './CarouselButtons/CarouselButtonts'
 
 const Projects = () => {
-	const swiperRef = useRef<any>(null)
+	const swiperRef = useRef<SwiperType | null>(null)
 	const router = useRouter()
 
 	return (
