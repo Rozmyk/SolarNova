@@ -2,40 +2,13 @@
 import Wrapper from '../Wrapper/Wrapper'
 import TitleText from '../ui/TitleText/TitleText'
 import Button from '../ui/Button/Button'
-import { MdOutlineDateRange } from 'react-icons/md'
-import { FaUser } from 'react-icons/fa6'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useRef } from 'react'
 import 'swiper/css'
 import { useRouter } from 'next/navigation'
-
+import ProjectCard from './ProjectCard/ProjectCard'
 import projectData from '../../../data/projectsData'
 import CarouselButtons from './CarouselButtons/CarouselButtonts'
-
-const ProjectCard = ({ src, title, author, date }: { src: string; title: string; author: string; date: string }) => {
-	return (
-		<div className='w-full rounded-xl overflow-hidden'>
-			<div
-				className='w-full h-60 rounded-xl'
-				style={{
-					backgroundImage: `url(${src})`,
-					backgroundSize: 'cover',
-					backgroundPosition: 'center',
-				}}></div>
-			<div className='flex justify-start items-center mb-2 mt-4 gap-4'>
-				<div className='flex justify-start items-center gap-2 text-darkText'>
-					<MdOutlineDateRange />
-					<p className='text-xs'>{date}</p>
-				</div>
-				<div className='flex justify-start items-center gap-2 text-darkText'>
-					<FaUser />
-					<p className='text-xs'>{author}</p>
-				</div>
-			</div>
-			<p className='font-semibold text-secondary text-lg mt-2'>{title}</p>
-		</div>
-	)
-}
 
 const Projects = () => {
 	const swiperRef = useRef<any>(null)
@@ -58,7 +31,13 @@ const Projects = () => {
 				<Swiper loop spaceBetween={50} slidesPerView={3} onSwiper={swiper => (swiperRef.current = swiper)}>
 					{projectData.map(project => (
 						<SwiperSlide key={project.title}>
-							<ProjectCard src={project.src} title={project.title} date={project.date} author={project.author} />
+							<ProjectCard
+								id={project.id}
+								src={project.src}
+								title={project.title}
+								date={project.date}
+								author={project.author}
+							/>
 						</SwiperSlide>
 					))}
 				</Swiper>
