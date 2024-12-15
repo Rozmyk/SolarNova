@@ -34,13 +34,7 @@ const SingleCard = ({ src, icon: Icon, title, text }: SingleCardProps) => {
 				<GoArrowUpRight size={20} />
 			</button>
 
-			<Image
-				className='absolute bottom-0 right-[-5px] z-10 '
-				height={80}
-				width={80}
-				alt='decorative'
-				src='/corner.svg'
-			/>
+			<Image className='absolute bottom-0 right-0 z-10 ' height={80} width={80} alt='decorative' src='/corner.svg' />
 		</div>
 	)
 }
