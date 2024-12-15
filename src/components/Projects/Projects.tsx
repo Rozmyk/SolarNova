@@ -29,42 +29,42 @@ const Projects = () => {
 					/>
 				</div>
 			</div>
-			<div className='p-4 flex w-full gap-4 flex-col md:flex-row'>
-				<Swiper
-					breakpoints={{
-						0: {
-							slidesPerView: 1,
-							centeredSlides: true,
-							spaceBetween: 0,
-						},
-						750: {
-							slidesPerView: 2,
-							centeredSlides: false,
-							spaceBetween: 25,
-						},
-						1100: {
-							slidesPerView: 3,
-							centeredSlides: false,
-							spaceBetween: 50,
-						},
-					}}
-					loop
-					onSwiper={swiper => (swiperRef.current = swiper)}>
-					{projectData.map(project => (
-						<SwiperSlide key={project.title}>
-							<div className='w-full h-full flex justify-center items-center'>
-								<ProjectCard
-									id={project.id}
-									src={project.src}
-									title={project.title}
-									date={project.date}
-									author={project.author}
-								/>
-							</div>
-						</SwiperSlide>
-					))}
-				</Swiper>
-			</div>
+
+			<Swiper
+				breakpoints={{
+					0: {
+						slidesPerView: 1,
+						centeredSlides: true,
+						spaceBetween: 0,
+					},
+					750: {
+						slidesPerView: 2,
+						centeredSlides: false,
+						spaceBetween: 25,
+					},
+					1100: {
+						slidesPerView: 3,
+						centeredSlides: false,
+						spaceBetween: 50,
+					},
+				}}
+				loop
+				onSwiper={swiper => (swiperRef.current = swiper)}>
+				{projectData.map(project => (
+					<SwiperSlide key={project.title}>
+						<div className='w-full h-full flex justify-center items-center '>
+							<ProjectCard
+								id={project.id}
+								src={project.src}
+								title={project.title}
+								date={project.date}
+								author={project.author}
+							/>
+						</div>
+					</SwiperSlide>
+				))}
+			</Swiper>
+
 			<div className='flex justify-center items-center w-full p-4 mt-8'>
 				<Button
 					onClick={() => {

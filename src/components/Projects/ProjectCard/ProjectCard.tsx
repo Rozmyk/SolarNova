@@ -15,7 +15,7 @@ const ProjectCard = ({
 	id: string
 }) => {
 	return (
-		<Link href={`projects/${id}`} className='w-full rounded-xl overflow-hidden '>
+		<Link href={`projects/${id}`} className='max-w-80 w-full  rounded-xl overflow-hidden  '>
 			<div
 				className='w-full  h-60 rounded-xl '
 				style={{
@@ -24,7 +24,7 @@ const ProjectCard = ({
 					backgroundPosition: 'center',
 					maxWidth: 350,
 				}}></div>
-			<div className='flex justify-start items-center mb-2 mt-4 gap-4'>
+			<div className='flex justify-start items-center mb-2 mt-4 gap-4 w-full'>
 				<div className='flex justify-start items-center gap-2 text-darkText'>
 					<MdOutlineDateRange />
 					<p className='text-xs'>{date}</p>
