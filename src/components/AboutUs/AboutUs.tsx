@@ -16,7 +16,7 @@ const SingleRatingComponent = ({ number, text }: { number: string; text: string 
 const AboutUs = () => {
 	const router = useRouter()
 	return (
-		<div className='bg-foreground w-full relative p-4'>
+		<div className='bg-foreground w-full relative p-4 overflow-hidden'>
 			<div className='absolute opacity-10 top-5 md:left-10 right-0 '>
 				<PiCornersInFill size={150} color='#40cb7f' />
 			</div>
