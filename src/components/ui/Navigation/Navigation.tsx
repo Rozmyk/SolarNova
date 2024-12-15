@@ -19,7 +19,10 @@ const Navigation = () => {
 		}
 	}, [])
 	return (
-		<nav className={` w-full  top-0 left-0  z-20 flex flex-col items-center  justify-center bg-background`}>
+		<nav
+			className={` w-full top-0 ${
+				isMobileView ? 'fixed' : 'relative'
+			} left-0  z-20 flex flex-col items-center  justify-center bg-background `}>
 			{isMobileView ? <MobileNav /> : <DesktopNav />}
 		</nav>
 	)
