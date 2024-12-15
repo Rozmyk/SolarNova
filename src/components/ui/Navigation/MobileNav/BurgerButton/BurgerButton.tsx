@@ -1,6 +1,6 @@
-import { useState } from 'react'
-const BurgerButton = () => {
-	const [isOpen, setIsOpen] = useState(false)
+import { Dispatch, SetStateAction } from 'react'
+
+const BurgerButton = ({ isOpen, setIsOpen }: { isOpen: boolean; setIsOpen: Dispatch<SetStateAction<boolean>> }) => {
 	const genericHamburgerLine = `h-0.5 w-5 my-0.5 rounded-full bg-black transition ease transform duration-300`
 
 	return (
