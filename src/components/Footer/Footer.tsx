@@ -16,7 +16,7 @@ const SectionTitle = ({ children }: { children: string }) => {
 const Footer = () => {
 	return (
 		<footer className='bg-[#08190f]'>
-			<Wrapper>
+			<Wrapper className='mb-0'>
 				<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-start w-full gap-8 text-[#c6cbc9] p-8'>
 					<div className='flex flex-col items-center md:items-start mb-4'>
 						<Image width={120} height={100} alt='solarnova logo' src='/logoWhite.svg' className='mb-4' />
@@ -53,7 +53,7 @@ const Footer = () => {
 					</div>
 				</div>
 
-				<div className='flex md:flex-row flex-col gap-4 justify-between items-center mt-40 text-[#c6cbc9] p-4 text-sm '>
+				<div className='flex md:flex-row flex-col gap-4 justify-between items-center mt-40 text-[#c6cbc9] p-8 text-sm border-t border-[#0f2316] border-border '>
 					<p>Copyright all rights reserved</p>
 					<div className='flex gap-2 justify-center items-center '>
 						<Link href={'/privacy-policy'} className='hover:text-white'>
