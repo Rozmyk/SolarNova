@@ -53,7 +53,7 @@ const Footer = () => {
 					</div>
 				</div>
 
-				<div className='flex md:flex-row flex-col gap-4 justify-between items-center mt-40 text-[#c6cbc9] p-8 text-sm border-t border-[#0f2316] border-border '>
+				<div className='flex md:flex-row flex-col gap-4 justify-between items-center mt-40 text-[#c6cbc9] p-8 text-sm border-t border-[#0f2316]'>
 					<p>Copyright all rights reserved</p>
 					<div className='flex gap-2 justify-center items-center '>
 						<Link href={'/privacy-policy'} className='hover:text-white'>
