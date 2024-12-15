@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Navigation from '@/components/ui/Navigation/Navigation'
 import localFont from 'next/font/local'
-
+import Footer from '@/components/Footer/Footer'
 import './globals.css'
 
 const geistSans = localFont({
@@ -32,6 +32,7 @@ export default function RootLayout({
 			<body className={`${geistSans.variable}  ${Coolvetica.variable} antialiased`}>
 				<Navigation />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	)
