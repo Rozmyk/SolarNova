@@ -1,6 +1,6 @@
 import Wrapper from '@/components/Wrapper/Wrapper'
 import TitleText from '@/components/ui/TitleText/TitleText'
-import Footer from '@/components/Footer/Footer'
+
 const ContactPage = () => {
 	return (
 		<Wrapper>
@@ -10,7 +10,7 @@ const ContactPage = () => {
 				</div>
 			</div>
 			<div className='bg-yellow-400 w-full h-96 flex justify-between items-center'>
-				<div className='w-full md:w-1/2'>dsa</div>
+				<div className='w-full md:w-1/2'>inputs</div>
 				<div className='w-full md:w-1/2'>google map</div>
 			</div>
 		</Wrapper>
