@@ -1,4 +1,5 @@
 import { GoNorthStar } from 'react-icons/go'
+import Image from 'next/image'
 const SingleAvatar = ({ src, alt }: { src: string; alt: string }) => {
 	return <img className='inline-block size-6 rounded-full ring-2 ring-white' src={src} alt={alt} />
 }
@@ -9,7 +10,7 @@ const HeaderImage = () => {
 				<GoNorthStar size={100} color='#40cb7f' />
 			</div>
 
-			<img width={750} height={500} alt='Wind turbine' src='/HeaderImage.png' />
+			<Image width={750} height={500} alt='Wind turbine' src='/HeaderImage.png' />
 
 			<div className='w-36 h-36 absolute bottom-[-72px] md:bottom-10 left-1/2 translate-x-[-50%] md:left-[-75px] md:translate-x-0 backdrop-blur-lg bg-white bg-opacity-60 flex flex-col justify-center items-center rounded-md shadow-lg'>
 				<div className='flex -space-x-1 overflow-hidden mb-2 p-1'>
