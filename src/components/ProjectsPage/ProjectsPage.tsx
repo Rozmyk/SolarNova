@@ -69,8 +69,8 @@ const ProjectsPage = () => {
 					</div>
 				</div>
 			</Wrapper>
-			<div className='absolute opacity-5 bottom-20 left-10 rotate-12  '>
-				<MdKeyboardDoubleArrowUp size={160} color='black' />
+			<div className='absolute  bottom-20 left-10 rotate-12  ' style={{ opacity: 0.03 }}>
+				<MdKeyboardDoubleArrowUp size={400} color='black' />
 			</div>
 		</div>
 	)
