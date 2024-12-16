@@ -11,9 +11,16 @@ const ProjectCard = ({
 	src: string
 	title: string
 	author: string
-	date: string
+	date: number
 	id: string
 }) => {
+	function formatDate(timestamp: number): string {
+		return new Intl.DateTimeFormat('en-US', {
+			month: 'long',
+			day: 'numeric',
+			year: 'numeric',
+		}).format(new Date(timestamp))
+	}
 	return (
 		<Link href={`projects/${id}`} className='max-w-80 w-full  rounded-xl overflow-hidden  '>
 			<div
@@ -27,7 +34,7 @@ const ProjectCard = ({
 			<div className='flex justify-start items-center mb-2 mt-4 gap-4 w-full'>
 				<div className='flex justify-start items-center gap-2 text-darkText'>
 					<MdOutlineDateRange />
-					<p className='text-xs'>{date}</p>
+					<p className='text-xs'>{formatDate(date)}</p>
 				</div>
 				<div className='flex justify-start items-center gap-2 text-darkText'>
 					<FaUser />
