@@ -19,7 +19,7 @@ const MobileNav = () => {
 		}
 	}, [isOpen])
 	return (
-		<div className=' w-full  h-20 flex justify-between items-center p-2 bg-foreground'>
+		<div className=' w-full  h-20 flex justify-between items-center px-4 py-2 bg-foreground'>
 			<HomeButton />
 			<BurgerButton isOpen={isOpen} setIsOpen={setIsOpen} />
 			{isOpen && <Content />}
