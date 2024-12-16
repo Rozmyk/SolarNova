@@ -4,7 +4,9 @@ interface Project {
 	title: string
 	date: string
 	author: string
+	category: string
 }
+
 const projectData: Project[] = [
 	{
 		id: 'project-1',
@@ -12,6 +14,7 @@ const projectData: Project[] = [
 		title: 'Solar Farm Expansion Initiative',
 		date: 'December 15, 2024',
 		author: 'Christopher Jack',
+		category: 'Solar Energy',
 	},
 	{
 		id: 'project-2',
@@ -19,6 +22,7 @@ const projectData: Project[] = [
 		title: 'Offshore Wind Turbine Development',
 		date: 'November 10, 2024',
 		author: 'Sophia Green',
+		category: 'Wind Energy',
 	},
 	{
 		id: 'project-3',
@@ -26,6 +30,7 @@ const projectData: Project[] = [
 		title: 'Geothermal Energy Plant in Iceland',
 		date: 'October 20, 2024',
 		author: 'Michael Brown',
+		category: 'Geothermal Energy',
 	},
 	{
 		id: 'project-4',
@@ -33,6 +38,7 @@ const projectData: Project[] = [
 		title: 'Hydropower Station Modernization',
 		date: 'September 5, 2024',
 		author: 'Emily White',
+		category: 'Hydropower',
 	},
 	{
 		id: 'project-5',
@@ -40,6 +46,7 @@ const projectData: Project[] = [
 		title: 'Community Solar Panel Project',
 		date: 'August 12, 2024',
 		author: 'Liam Carter',
+		category: 'Solar Energy',
 	},
 	{
 		id: 'project-6',
@@ -47,6 +54,7 @@ const projectData: Project[] = [
 		title: 'Biomass Energy for Rural Areas',
 		date: 'July 22, 2024',
 		author: 'Emma Wilson',
+		category: 'Biomass Energy',
 	},
 	{
 		id: 'project-7',
@@ -54,6 +62,7 @@ const projectData: Project[] = [
 		title: 'Innovative Wave Energy Converter',
 		date: 'June 15, 2024',
 		author: 'Olivia Martinez',
+		category: 'Wave Energy',
 	},
 	{
 		id: 'project-8',
@@ -61,6 +70,7 @@ const projectData: Project[] = [
 		title: 'Zero-Energy Building Construction',
 		date: 'May 30, 2024',
 		author: 'James Lopez',
+		category: 'Sustainable Architecture',
 	},
 	{
 		id: 'project-9',
@@ -68,6 +78,7 @@ const projectData: Project[] = [
 		title: 'Floating Solar Panel Farms',
 		date: 'April 18, 2024',
 		author: 'Isabella Thompson',
+		category: 'Solar Energy',
 	},
 	{
 		id: 'project-10',
@@ -75,6 +86,7 @@ const projectData: Project[] = [
 		title: 'Smart Renewable Energy Grids',
 		date: 'March 10, 2024',
 		author: 'Noah Johnson',
+		category: 'Smart Grids',
 	},
 ]
 
