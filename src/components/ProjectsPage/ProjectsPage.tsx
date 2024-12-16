@@ -4,6 +4,8 @@ import Wrapper from '../Wrapper/Wrapper'
 import projectData from '../../../data/projectsData'
 import ProjectCard from '../Projects/ProjectCard/ProjectCard'
 import TitleText from '../ui/TitleText/TitleText'
+import { MdKeyboardDoubleArrowUp } from 'react-icons/md'
+import { TbNorthStar } from 'react-icons/tb'
 
 const SortBy = ({ onSortChange }: { onSortChange: Dispatch<SetStateAction<string>> }) => {
 	return (
@@ -31,38 +33,46 @@ const ProjectsPage = () => {
 	})
 
 	return (
-		<Wrapper>
-			<div className='w-full flex flex-col justify-center items-center'>
-				<div className='w-full flex md:flex-row flex-col justify-between items-center gap-4 mb-8 p-4'>
-					<div className='w-full md:w-1/2'>
-						<TitleText>Our Projects</TitleText>
-					</div>
-					<div className='w-full md:w-1/2 flex justify-end'>
-						<SortBy onSortChange={setSortOrder} />
-					</div>
-				</div>
-				<div className='p-4'>
-					<p className='text-secondary'>
-						Our renewable energy projects focus on creating sustainable, eco-friendly energy solutions that support
-						environmental protection and reduce carbon emissions. We invest in innovative technologies harnessing
-						renewable energy sources such as solar, wind, biomass, and hydropower. Our projects include the development
-						of solar farms, wind power plants, energy storage systems, and biogas facilities, providing clean and
-						reliable energy for homes, industries, and public institutions. Through these initiatives, we are committed
-						to building a sustainable energy future that reduces dependence on fossil fuels and supports local
-						communities and economies.
-					</p>
-				</div>
-				<div
-					className='grid w-full gap-8 max-w-screen-lg 
-                  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-8'>
-					{sortedProjects.map(project => (
-						<div className='w-full h-full flex justify-center items-center' key={project.id}>
-							<ProjectCard {...project} />
-						</div>
-					))}
-				</div>
+		<div className='overflow-hidden  relative'>
+			<div className='absolute opacity-10 top-96 right-10 rotate-12 '>
+				<TbNorthStar size={200} color='#40cb7f' />
 			</div>
-		</Wrapper>
+			<Wrapper>
+				<div className=' w-full flex flex-col justify-center items-center overflow-hidden'>
+					<div className='w-full flex md:flex-row flex-col justify-between items-center gap-4 mb-8 p-4'>
+						<div className='w-full md:w-1/2'>
+							<TitleText>Our Projects</TitleText>
+						</div>
+						<div className='w-full md:w-1/2 flex justify-end'>
+							<SortBy onSortChange={setSortOrder} />
+						</div>
+					</div>
+					<div className='p-4'>
+						<p className='text-secondary'>
+							Our renewable energy projects focus on creating sustainable, eco-friendly energy solutions that support
+							environmental protection and reduce carbon emissions. We invest in innovative technologies harnessing
+							renewable energy sources such as solar, wind, biomass, and hydropower. Our projects include the
+							development of solar farms, wind power plants, energy storage systems, and biogas facilities, providing
+							clean and reliable energy for homes, industries, and public institutions. Through these initiatives, we
+							are committed to building a sustainable energy future that reduces dependence on fossil fuels and supports
+							local communities and economies.
+						</p>
+					</div>
+					<div
+						className='grid w-full gap-8 max-w-screen-lg 
+                  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-8'>
+						{sortedProjects.map(project => (
+							<div className='w-full h-full flex justify-center items-center' key={project.id}>
+								<ProjectCard {...project} />
+							</div>
+						))}
+					</div>
+				</div>
+			</Wrapper>
+			<div className='absolute opacity-5 bottom-20 left-10 rotate-12  '>
+				<MdKeyboardDoubleArrowUp size={160} color='black' />
+			</div>
+		</div>
 	)
 }
 
