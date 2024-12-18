@@ -5,7 +5,6 @@ import { CiBadgeDollar } from 'react-icons/ci'
 import { PiHandCoinsLight, PiStarFourFill } from 'react-icons/pi'
 import { GoNorthStar } from 'react-icons/go'
 import { RxDragHandleDots1 } from 'react-icons/rx'
-import { TfiLineDotted } from 'react-icons/tfi'
 
 import Button from '../ui/Button/Button'
 const TextWithIcon = ({
@@ -131,7 +130,7 @@ const AboutPage = () => {
 				<Wrapper>
 					<div className='flex flex-col justify-center items-center p-4'>
 						<h3 className='text-3xl text-secondary font-semibold'>
-							We've 36+ Active & Dedicated Members for Helping the Customers
+							We&apos;ve 36+ Active & Dedicated Members for Helping the Customers
 						</h3>
 						<p className='text-darkText mb-8 text-sm'>
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia officiis accusantium asperiores quidem
