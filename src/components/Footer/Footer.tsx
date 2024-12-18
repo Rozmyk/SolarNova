@@ -15,7 +15,7 @@ const SectionTitle = ({ children }: { children: string }) => {
 }
 const Footer = () => {
 	return (
-		<footer className='bg-[#08190f]'>
+		<footer className='bg-darkGreen'>
 			<Wrapper className='mb-0'>
 				<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-start w-full gap-8 text-[#c6cbc9] p-8'>
 					<div className='flex flex-col items-center md:items-start mb-4'>
