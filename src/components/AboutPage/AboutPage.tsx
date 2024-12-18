@@ -74,9 +74,10 @@ const AboutPage = () => {
 						</div>
 						<div className='h-96 w-1/2 flex flex-col justify-end items-start '>
 							<div className='w-full md:w-4/5  h-72  relative drop-shadow-md '>
-								<div className='absolute top-[-40px] left-[-40px] md:right-[-40px] z-10'>
+								<div className='absolute top-[-40px] left-[-40px] md:top-[-40px] md:left-auto md:right-[-40px] z-10'>
 									<GoNorthStar size={80} color='#40cb7f' />
 								</div>
+
 								<Image fill alt='test' src='/team2.jpg' className='rounded-md' />
 							</div>
 						</div>
