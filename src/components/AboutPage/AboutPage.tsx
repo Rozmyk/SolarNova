@@ -60,12 +60,12 @@ const SingleTeamCard = ({
 }
 const AboutPage = () => {
 	return (
-		<div className='relative overflow-hidden mt-20'>
+		<div className='relative overflow-hidden mt-10'>
 			<Wrapper>
 				<div className='w-full flex  flex-col md:flex-row justify-between items-center gap-4 relative z-10 mb-8 p-4 '>
 					<div className='w-full h-full md:w-1/2  flex justify-between items-center gap-4 mb-8 md:mb-0 '>
 						<div className='h-96 w-1/2  flex flex-col justify-start items-end '>
-							<div className='w-4/5 h-72  relative drop-shadow-md '>
+							<div className='w-full md:w-4/5 h-72  relative drop-shadow-md '>
 								<Image fill alt='test' src='/team1.jpg' className='z-10 rounded-md' />
 								<div className='absolute right-1/2 translate-x-1/2 bottom-[-100px]' style={{ opacity: 0.02 }}>
 									<RxDragHandleDots1 color='black' size={250} />
@@ -73,8 +73,8 @@ const AboutPage = () => {
 							</div>
 						</div>
 						<div className='h-96 w-1/2 flex flex-col justify-end items-start '>
-							<div className='w-4/5 h-72  relative drop-shadow-md '>
-								<div className='absolute top-[-40px] right-[-40px] z-10'>
+							<div className='w-full md:w-4/5  h-72  relative drop-shadow-md '>
+								<div className='absolute top-[-40px] left-[-40px] md:right-[-40px] z-10'>
 									<GoNorthStar size={80} color='#40cb7f' />
 								</div>
 								<Image fill alt='test' src='/team2.jpg' className='rounded-md' />
