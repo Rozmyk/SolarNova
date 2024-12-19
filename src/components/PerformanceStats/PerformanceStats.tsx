@@ -35,7 +35,7 @@ const PerformanceStats = () => {
 
 			<GoNorthStar
 				style={{ opacity: 0.02 }}
-				className='absolute left-0 bottom-96 rotate-45  z-0  '
+				className='absolute left-0 bottom-96 rotate-45  z-0 animate-spin-slow  '
 				size={500}
 				color='black'
 			/>
