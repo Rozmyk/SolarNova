@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-const ActiveLink = ({ href, isActive, children }: { href: string; isActive: boolean; children: string }) => {
+const ActiveLink = ({ href, isActive, children }: { href: string; isActive?: boolean; children: string }) => {
 	return (
 		<li>
 			<Link
@@ -17,11 +17,14 @@ const ActiveLink = ({ href, isActive, children }: { href: string; isActive: bool
 
 const Buttons = () => {
 	const pathname = usePathname()
-	const items = ['Home', 'About', 'Projects', 'Service']
+	const items = ['About', 'Projects', 'Service']
 
 	return (
 		<div className='flex justify-center items-center py-2 '>
 			<ul className='flex space-x-4'>
+				<ActiveLink href='/' key={'home'}>
+					Home
+				</ActiveLink>
 				{items.map(item => {
 					const slug = `/${item.toLowerCase().replace(/ /g, '-')}`
 					const isActive = pathname === slug || (pathname === '/' && item === 'Home')
