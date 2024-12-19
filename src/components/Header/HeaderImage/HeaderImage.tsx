@@ -6,7 +6,7 @@ const SingleAvatar = ({ src, alt }: { src: string; alt: string }) => {
 const HeaderImage = () => {
 	return (
 		<div className='relative  w-full md:w-1/3 mb-40 md:mb-0 '>
-			<div className='absolute top-2 right-6'>
+			<div className='absolute top-2 right-6 animate-spin-fast'>
 				<GoNorthStar size={100} color='#40cb7f' />
 			</div>
 
