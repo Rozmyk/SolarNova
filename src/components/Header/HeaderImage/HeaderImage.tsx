@@ -19,7 +19,7 @@ const HeaderImage = () => {
 					<SingleAvatar src='/customerAvatar3.jpg' alt='portrait of a young man' />
 				</div>
 				<p className=' text-2xl md:text-4xl font-medium text-secondary mb-2'>05K+</p>
-				<p className='text-md ' style={{ color: '#6f6e6e', fontWeight: 500 }}>
+				<p className='text-md  text-[#6f6e6e]' style={{ fontWeight: 500 }}>
 					Customers
 				</p>
 			</div>
