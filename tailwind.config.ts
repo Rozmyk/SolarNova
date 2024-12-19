@@ -11,6 +11,7 @@ export default {
 		extend: {
 			animation: {
 				'spin-slow': 'spin 20s linear infinite',
+				'spin-fast': 'spin 10s linear infinite',
 			},
 			colors: {
 				background: 'hsl(var(--background))',
