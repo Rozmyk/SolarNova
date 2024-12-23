@@ -5,7 +5,7 @@ import TeamSection from './TeamSection/TeamSection'
 const AboutPage = () => {
 	return (
 		<>
-			<div className='relative overflow-hidden mt-10'>
+			<div className='relative overflow-hidden '>
 				<HeroSection />
 				<StatsSection />
 				<TeamSection />
