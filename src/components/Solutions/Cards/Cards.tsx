@@ -42,21 +42,21 @@ const Cards = () => {
 	return (
 		<div className='flex md:flex-row flex-col justify-between items-center md:gap-14 gap-8'>
 			<SingleCard
-				src='/backgroundImage1.jpg'
+				src='/service/solarEnergy.webp'
 				icon={SlEnergy}
 				title='Solar Energy system'
 				text='Enjoy clean, renewable energy at home and reduce your electricity bills.'
 			/>
 			<SingleCard
-				src='/backgroundImage2.jpg'
+				src='/service/windEnergy.webp'
 				icon={TbCarFan}
 				title='Wind energy systems'
 				text='Generate electricy from the wind and contribute to a cleaner enviorment.'
 			/>
 			<SingleCard
-				src='/backgroundImage3.jpg'
+				src='/service/hydroPower.webp'
 				icon={RiWaterFlashFill}
-				title='hydrpower systems'
+				title='hydropower systems'
 				text='Small-scale hydrpower systems that can be installed in remote areas.'
 			/>
 		</div>
