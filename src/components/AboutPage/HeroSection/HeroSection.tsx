@@ -1,11 +1,12 @@
+'use client'
 import Image from 'next/image'
 import Button from '@/components/ui/Button/Button'
 import Wrapper from '@/components/Wrapper/Wrapper'
 import { TbGridDots } from 'react-icons/tb'
 import { CiBadgeDollar } from 'react-icons/ci'
 import { PiHandCoinsLight } from 'react-icons/pi'
-import { RxDragHandleDots1 } from 'react-icons/rx'
-import { GoNorthStar } from 'react-icons/go'
+import { useState, useEffect } from 'react'
+
 const TextWithIcon = ({
 	text,
 	icon: Icon,
@@ -23,27 +24,34 @@ const TextWithIcon = ({
 	)
 }
 const HeroSection = () => {
+	const [isMobileView, setIsMobileView] = useState(false)
+	useEffect(() => {
+		const handleResize = () => {
+			setIsMobileView(window.innerWidth < 1100)
+		}
+
+		handleResize()
+
+		window.addEventListener('resize', handleResize)
+
+		return () => {
+			window.removeEventListener('resize', handleResize)
+		}
+	}, [])
 	return (
 		<>
 			<Wrapper>
-				<div className='w-full flex  flex-col md:flex-row justify-between items-center gap-4 relative z-10 mb-8 p-4 '>
-					<div className='w-full h-full md:w-1/2  flex justify-between items-center gap-4 mb-8 md:mb-0 '>
-						<div className='h-96 w-1/2  flex flex-col justify-start items-end '>
-							<div className='w-full md:w-4/5 h-72  relative drop-shadow-md '>
-								<Image fill alt='test' src='/team1.jpg' className='z-10 rounded-md' />
-								<div className='absolute right-1/2 translate-x-1/2 bottom-[-100px]' style={{ opacity: 0.02 }}>
-									<RxDragHandleDots1 color='black' size={250} />
-								</div>
-							</div>
-						</div>
-						<div className='h-96 w-1/2 flex flex-col justify-end items-start '>
-							<div className='w-full md:w-4/5  h-72  relative drop-shadow-md '>
-								<div className='absolute top-[-30px] left-[-30px] md:top-[-30px] md:left-auto md:right-[-30px] z-10'>
-									<GoNorthStar size={60} color='#40cb7f' />
-								</div>
-
-								<Image fill alt='test' src='/team2.jpg' className='rounded-md' />
-							</div>
+				<div className='w-full flex  flex-col md:flex-row justify-between items-center gap-4 relative z-10  p-4 '>
+					<div className='w-full h-full md:w-1/2  flex justify-between items-center gap-4  md:mb-0 '>
+						<div className='relative w-[585px] '>
+							<Image
+								width={isMobileView ? 300 : 440}
+								height={isMobileView ? 300 : 440}
+								alt='solar farm'
+								className='absolute top-1/2 left-1/2 z-10  -translate-x-1/2 -translate-y-1/2'
+								src='/serviceImage.png'
+							/>
+							<Image width={585} height={585} className='animate-spin-slow' src='/halfcircle.svg' alt='' />
 						</div>
 					</div>
 					<div className='w-full md:w-1/2 '>
