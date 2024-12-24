@@ -6,6 +6,7 @@ import { TbGridDots } from 'react-icons/tb'
 import { CiBadgeDollar } from 'react-icons/ci'
 import { PiHandCoinsLight } from 'react-icons/pi'
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 
 const TextWithIcon = ({
 	text,
@@ -25,6 +26,7 @@ const TextWithIcon = ({
 }
 const HeroSection = () => {
 	const [isMobileView, setIsMobileView] = useState(false)
+	const router = useRouter()
 	useEffect(() => {
 		const handleResize = () => {
 			setIsMobileView(window.innerWidth < 1100)
@@ -68,7 +70,19 @@ const HeroSection = () => {
 							<TextWithIcon icon={PiHandCoinsLight} text='Human and Consulting' />
 						</div>
 						<div className='flex justify-start gap-4 items-center w-full mt-8'>
-							<Button>Contact</Button> <Button reverse>Our services</Button>
+							<Button
+								onClick={() => {
+									router.push('/contact')
+								}}>
+								Contact
+							</Button>{' '}
+							<Button
+								onClick={() => {
+									router.push('/service')
+								}}
+								reverse>
+								Our services
+							</Button>
 						</div>
 					</div>
 				</div>
