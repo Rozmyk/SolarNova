@@ -1,11 +1,19 @@
 import SingleProjectPage from '@/components/SingleProjectPage/SingleProjectPage'
 import { Metadata } from 'next'
+
 export const metadata: Metadata = {
-	title: 'Singe Project',
+	title: 'Single Project',
 	description: 'lorem20',
 }
-const page = ({ params: { projectId } }: { params: { projectId: string } }) => {
+
+interface PageProps {
+	params: {
+		projectId: string
+	}
+}
+
+const Page = ({ params: { projectId } }: PageProps) => {
 	return <SingleProjectPage projectId={projectId} />
 }
 
-export default page
+export default Page
