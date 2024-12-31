@@ -1,16 +1,6 @@
-interface Project {
-	id: string
-	src: string
-	title: string
-	date: number
-	author: string
-	description: string
-	technologies: string[]
-	features: string[]
-	gallery: string[]
-}
+import { ProjectProps } from '@/types'
 
-const projectData: Project[] = [
+const projectData: ProjectProps[] = [
 	{
 		id: 'project-1',
 		src: '/projectImage1.jpg',
@@ -21,6 +11,10 @@ const projectData: Project[] = [
 		technologies: ['Solar Panels', 'Battery Storage', 'Inverters'],
 		features: ['100 MW capacity', '10,000 solar panels', 'Integrated battery system'],
 		gallery: ['/projectImage1.jpg', '/projectImage1a.jpg', '/projectImage1b.jpg'],
+		location: 'California, USA',
+		powerClass: 'Utility-Scale',
+		commissioning: 'Q4 2024',
+		status: 'In Progress',
 	},
 	{
 		id: 'project-2',
@@ -32,6 +26,10 @@ const projectData: Project[] = [
 		technologies: ['Wind Turbines', 'Offshore Platforms', 'HVAC Systems'],
 		features: ['200 MW capacity', '20 turbines', 'Remote monitoring system'],
 		gallery: ['/projectImage2.jpg', '/projectImage2a.jpg', '/projectImage2b.jpg'],
+		location: 'North Sea, Europe',
+		powerClass: 'Offshore',
+		commissioning: 'Q4 2024',
+		status: 'In Progress',
 	},
 	{
 		id: 'project-3',
@@ -43,6 +41,10 @@ const projectData: Project[] = [
 		technologies: ['Geothermal Drilling', 'Heat Exchangers', 'Turbine Generators'],
 		features: ['50 MW capacity', 'Environmentally safe drilling', 'Low maintenance system'],
 		gallery: ['/projectImage3.jpg', '/projectImage3a.jpg', '/projectImage3b.jpg'],
+		location: 'Reykjavik, Iceland',
+		powerClass: 'Geothermal',
+		commissioning: 'Q4 2024',
+		status: 'In Progress',
 	},
 	{
 		id: 'project-4',
@@ -54,6 +56,10 @@ const projectData: Project[] = [
 		technologies: ['Turbine Upgrades', 'Advanced Control Systems', 'Hydraulic Generators'],
 		features: ['Increased capacity by 25%', 'AI-based efficiency monitoring', 'Reduced operational costs'],
 		gallery: ['/projectImage4.jpg', '/projectImage4a.jpg', '/projectImage4b.jpg'],
+		location: 'Geneva, Switzerland',
+		powerClass: 'Hydropower',
+		commissioning: 'Q3 2024',
+		status: 'Completed',
 	},
 	{
 		id: 'project-5',
@@ -65,6 +71,10 @@ const projectData: Project[] = [
 		technologies: ['Community Shared Solar', 'Photovoltaic Panels', 'Energy Management Systems'],
 		features: ['Affordable clean energy', 'Revenue-sharing model', 'Localized energy grids'],
 		gallery: ['/projectImage5.jpg', '/projectImage5a.jpg', '/projectImage5b.jpg'],
+		location: 'Austin, Texas, USA',
+		powerClass: 'Community-Scale',
+		commissioning: 'Q3 2024',
+		status: 'In Progress',
 	},
 	{
 		id: 'project-6',
@@ -76,6 +86,10 @@ const projectData: Project[] = [
 		technologies: ['Biomass Boilers', 'Organic Waste Processing', 'Gasification Systems'],
 		features: ['Eco-friendly waste management', 'Low-cost energy production', 'Job creation in rural areas'],
 		gallery: ['/projectImage6.jpg', '/projectImage6a.jpg', '/projectImage6b.jpg'],
+		location: 'Kampala, Uganda',
+		powerClass: 'Biomass',
+		commissioning: 'Q3 2024',
+		status: 'In Progress',
 	},
 	{
 		id: 'project-7',
@@ -87,6 +101,10 @@ const projectData: Project[] = [
 		technologies: ['Wave Energy Converters', 'Anchoring Systems', 'Dynamic Load Balancers'],
 		features: ['Sustainable marine energy', 'Minimal environmental impact', 'Durable design'],
 		gallery: ['/projectImage7.jpg', '/projectImage7a.jpg', '/projectImage7b.jpg'],
+		location: 'Sydney, Australia',
+		powerClass: 'Marine Energy',
+		commissioning: 'Q2 2024',
+		status: 'In Progress',
 	},
 	{
 		id: 'project-8',
@@ -98,6 +116,10 @@ const projectData: Project[] = [
 		technologies: ['Passive Solar Design', 'Net-Zero Energy HVAC', 'Energy-Efficient Materials'],
 		features: ['Energy self-sufficient', 'Reduced carbon footprint', 'Smart energy monitoring'],
 		gallery: ['/projectImage8.jpg', '/projectImage8a.jpg', '/projectImage8b.jpg'],
+		location: 'Berlin, Germany',
+		powerClass: 'Building-Scale',
+		commissioning: 'Q2 2024',
+		status: 'In Progress',
 	},
 	{
 		id: 'project-9',
@@ -109,6 +131,10 @@ const projectData: Project[] = [
 		technologies: ['Floating Photovoltaics', 'Waterproof Solar Panels', 'Smart Inverters'],
 		features: ['Increased panel efficiency', 'Water evaporation reduction', 'Cost-effective installation'],
 		gallery: ['/projectImage9.jpg', '/projectImage9a.jpg', '/projectImage9b.jpg'],
+		location: 'Tokyo, Japan',
+		powerClass: 'Floating Solar',
+		commissioning: 'Q2 2024',
+		status: 'In Progress',
 	},
 	{
 		id: 'project-10',
@@ -120,6 +146,10 @@ const projectData: Project[] = [
 		technologies: ['Smart Meters', 'Energy Storage Systems', 'Renewable Integration Software'],
 		features: ['Real-time energy tracking', 'Improved energy reliability', 'Scalable for urban areas'],
 		gallery: ['/projectImage10.jpg', '/projectImage10a.jpg', '/projectImage10b.jpg'],
+		location: 'San Francisco, USA',
+		powerClass: 'Smart Grid',
+		commissioning: 'Q1 2024',
+		status: 'Completed',
 	},
 ]
 
