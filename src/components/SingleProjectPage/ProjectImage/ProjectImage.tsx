@@ -1,7 +1,12 @@
 import Image from 'next/image'
 import Button from '@/components/ui/Button/Button'
 import TitleText from '@/components/ui/TitleText/TitleText'
+import { useRouter } from 'next/navigation'
 const ProjectImage = ({ title, src, description }: { title: string; src: string; description: string }) => {
+	const router = useRouter()
+	const handleRedirect = () => {
+		router.push('/contact')
+	}
 	return (
 		<div className=' relative w-full'>
 			<div className='w-3/4 bg-yellow-300 h-96 relative rounded-lg overflow-hidden'>
@@ -10,7 +15,7 @@ const ProjectImage = ({ title, src, description }: { title: string; src: string;
 			<div className='w-1/3 backdrop-blur-lg bg-white bg-opacity-90 rounded-md shadow-lg absolute top-10 right-0  p-8    flex justify-center items-start flex-col'>
 				<TitleText>{title}</TitleText>
 				<p className='text-[#6f6e6e] text-sm mb-4'>{description}</p>
-				<Button>Contact</Button>
+				<Button onClick={handleRedirect}>Contact</Button>
 			</div>
 		</div>
 	)
