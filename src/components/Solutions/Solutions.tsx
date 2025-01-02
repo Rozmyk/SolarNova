@@ -15,7 +15,7 @@ const Solutions = () => {
 				<div className='w-full md:w-1/2 flex justify-end'>
 					<Button
 						onClick={() => {
-							router.push('/services')
+							router.push('/service')
 						}}>
 						View all services
 					</Button>
