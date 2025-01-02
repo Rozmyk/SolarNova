@@ -1,19 +1,9 @@
 import SingleProjectPage from '@/components/SingleProjectPage/SingleProjectPage'
-import { Metadata } from 'next'
 
-export const metadata: Metadata = {
-	title: 'Single Project',
-	description: 'lorem20',
-}
+type Params = Promise<{ projectId: string }>
 
-interface PageProps {
-	params: {
-		projectId: string
-	}
-}
-
-const Page = ({ params: { projectId } }: PageProps) => {
+export default async function page(props: { params: Params }) {
+	const params = await props.params
+	const projectId = params.projectId
 	return <SingleProjectPage projectId={projectId} />
 }
-
-export default Page
