@@ -6,7 +6,7 @@ import { Swiper as SwiperType } from 'swiper'
 import { useRef } from 'react'
 import Image from 'next/image'
 
-const Carousel = () => {
+const Carousel = ({ gallery }: { gallery: string[] }) => {
 	const swiperRef = useRef<SwiperType | null>(null)
 
 	return (
@@ -31,66 +31,23 @@ const Carousel = () => {
 					}}
 					loop
 					className='w-full'>
-					<SwiperSlide>
-						<div className='flex justify-center items-center w-full  h-auto  '>
-							<div className='md:w-2/3 h-full flex justify-center items-center rounded-lg overflow-hidden  '>
-								<Image
-									src='/projectPhoto.jpg'
-									alt='solar farm'
-									layout='responsive'
-									width={1000}
-									height={750}
-									objectFit='cover'
-									priority
-								/>
+					{gallery.map(image => (
+						<SwiperSlide key={image}>
+							<div className='flex justify-center items-center w-full h-auto'>
+								<div className='md:w-2/3 h-full flex justify-center items-center rounded-lg overflow-hidden'>
+									<Image
+										src={image}
+										alt='solar farm'
+										layout='responsive'
+										width={1000}
+										height={750}
+										objectFit='cover'
+										priority
+									/>
+								</div>
 							</div>
-						</div>
-					</SwiperSlide>
-					<SwiperSlide>
-						<div className='flex justify-center items-center w-full  h-auto  '>
-							<div className='md:w-2/3 h-full flex justify-center items-center rounded-lg overflow-hidden  '>
-								<Image
-									src='/projectPhoto.jpg'
-									alt='solar farm'
-									layout='responsive'
-									width={1000}
-									height={750}
-									objectFit='cover'
-									priority
-								/>
-							</div>
-						</div>
-					</SwiperSlide>
-					<SwiperSlide>
-						<div className='flex justify-center items-center w-full  h-auto  '>
-							<div className='md:w-2/3 h-full flex justify-center items-center rounded-lg overflow-hidden  '>
-								<Image
-									src='/projectPhoto.jpg'
-									alt='solar farm'
-									layout='responsive'
-									width={1000}
-									height={750}
-									objectFit='cover'
-									priority
-								/>
-							</div>
-						</div>
-					</SwiperSlide>
-					<SwiperSlide>
-						<div className='flex justify-center items-center w-full  h-auto  '>
-							<div className='md:w-2/3 h-full flex justify-center items-center rounded-lg overflow-hidden  '>
-								<Image
-									src='/projectPhoto.jpg'
-									alt='solar farm'
-									layout='responsive'
-									width={1000}
-									height={750}
-									objectFit='cover'
-									priority
-								/>
-							</div>
-						</div>
-					</SwiperSlide>
+						</SwiperSlide>
+					))}
 				</Swiper>
 			</div>
 		</div>
