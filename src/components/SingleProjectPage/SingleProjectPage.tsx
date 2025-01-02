@@ -71,7 +71,7 @@ const SingleProjectPage = ({ projectId }: { projectId: string }) => {
 							</div>
 						</div>
 					</div>
-					<Carousel />
+					{singleProjectData && <Carousel gallery={singleProjectData.gallery} />}
 					<Technologies />
 
 					<OtherProjects projectId={projectId} />
