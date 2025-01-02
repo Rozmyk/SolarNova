@@ -22,7 +22,7 @@ const ProjectCard = ({
 		}).format(new Date(timestamp))
 	}
 	return (
-		<Link href={`projects/${id}`} className='max-w-80 w-full  rounded-xl overflow-hidden  '>
+		<Link href={`/projects/${id}`} className='max-w-80 w-full  rounded-xl overflow-hidden  '>
 			<div
 				className='w-full  h-60 rounded-xl '
 				style={{
