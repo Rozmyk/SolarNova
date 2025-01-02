@@ -10,7 +10,7 @@ import 'swiper/css'
 import { useRouter } from 'next/navigation'
 import ProjectCard from './ProjectCard/ProjectCard'
 import projectData from '../../../data/projectsData'
-import CarouselButtons from './CarouselButtons/CarouselButtonts'
+import CarouselButtons from '../ui/CarouselButtons/CarouselButtons'
 
 const Projects = () => {
 	const swiperRef = useRef<SwiperType | null>(null)
