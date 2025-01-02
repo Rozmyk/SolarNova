@@ -4,14 +4,7 @@ import { useState } from 'react'
 import TitleText from '../ui/TitleText/TitleText'
 import Button from '../ui/Button/Button'
 import { useRouter } from 'next/navigation'
-
-const cardsData = [
-	{ text: 'Solar energy', src: '/service/solarEnergy.webp', single: false, href: 'solar-energy' },
-	{ text: 'Wind energy', src: '/service/windEnergy.webp', single: false, href: 'wind-energy' },
-	{ text: 'Hydropower', src: '/service/hydroPower.webp', single: true, href: 'hydropower' },
-	{ text: 'Free energy', src: '/backgroundImage1.jpg', single: true, href: 'free-energy' },
-	{ text: 'Free energy', src: '/backgroundImage1.jpg', single: false, href: 'free-energy' },
-]
+import servicesData from '../../../data/servicesData'
 
 const SingleCard = ({ text, single, src, href }: { text: string; single: boolean; src: string; href: string }) => {
 	const [hovered, setHovered] = useState(false)
@@ -70,7 +63,7 @@ const ServicePage = () => {
 				</p>
 			</div>
 			<div className='grid md:grid-cols-4 gap-4 p-4 mb-20'>
-				{cardsData.map((card, index) => (
+				{servicesData.map((card, index) => (
 					<SingleCard key={index} href={card.href} text={card.text} src={card.src} single={card.single} />
 				))}
 			</div>
