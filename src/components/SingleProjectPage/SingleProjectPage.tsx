@@ -1,13 +1,26 @@
 'use client'
+import Spinner from '../ui/Spinner/Spinner'
 import Wrapper from '../Wrapper/Wrapper'
 import ProjectImage from './ProjectImage/ProjectImage'
-import TitleText from '../ui/TitleText/TitleText'
-import Image from 'next/image'
 import projectData from '../../../data/projectsData'
 import { useState, useEffect } from 'react'
+import Technologies from './Technologies/Technologies'
+import Carousel from './Carousel/Carousel'
+import OtherProjects from './OtherProjects/OtherProjects'
+import { ProjectProps } from '@/types'
+
+const SingleProjectProfile = ({ label, value }: { label: string; value: string }) => {
+	return (
+		<div className='text-secondary flex flex-col justify-start items-start text-lg'>
+			<p className='font-semibold'>{label}</p>
+			<p>{value}</p>
+			<div className='mt-2 mb-2 border-t border-gray-300 w-full' />
+		</div>
+	)
+}
 
 const SingleProjectPage = ({ projectId }: { projectId: string }) => {
-	const [singleProjectData, setSingleProjectData] = useState(null)
+	const [singleProjectData, setSingleProjectData] = useState<ProjectProps | null>(null)
 	const [projectLoading, setProjectLoading] = useState(true)
 	const findProjectById = (projectId: string) => {
 		return projectData.find(project => project.id === projectId)
@@ -23,8 +36,10 @@ const SingleProjectPage = ({ projectId }: { projectId: string }) => {
 	}, [projectId])
 	return (
 		<Wrapper>
-			{projectLoading ? (
-				<p className='text-black text-4xl'>loading</p>
+			{projectLoading && !singleProjectData ? (
+				<div className='flex justify-center items-center w-full h-72'>
+					<Spinner />
+				</div>
 			) : (
 				<>
 					{singleProjectData && (
@@ -34,30 +49,32 @@ const SingleProjectPage = ({ projectId }: { projectId: string }) => {
 							src={singleProjectData.src}
 						/>
 					)}
-					<div className='w-full  mt-12 flex justify-between items-center gap-4 mb-8'>
-						<div className='w-full md:w-1/2 '>
-							<TitleText>The mission</TitleText>
-							<p className='text-darkText text-sm'>{singleProjectData.description}</p>
+					<div className='w-full   mt-20 flex-col md:flex-row md:flex justify-between items-start gap-20 mb-20 p-4'>
+						<div className='w-full md:w-1/2 md:mb-0 mb-10 '>
+							<h3 className='text-secondary font-semibold text-xl mb-2'>The mission</h3>
+							<p className='text-darkText '>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi nisi ab quaerat quasi consectetur, eius
+								iste suscipit incidunt perspiciatis a.
+							</p>
 						</div>
 						<div className=' w-full md:w-1/2  '>
-							<TitleText>Project profile</TitleText>
+							<h3 className='text-secondary font-semibold text-xl mb-2'>Project profile</h3>
+							<div className='w-full flex flex-col gap-2 '>
+								{singleProjectData && (
+									<>
+										<SingleProjectProfile label='Location:' value={singleProjectData.location} />
+										<SingleProjectProfile label='Power class:' value={singleProjectData.powerClass} />
+										<SingleProjectProfile label='Commissioning: ' value={singleProjectData.commissioning} />
+										<SingleProjectProfile label='Status:' value={singleProjectData.status} />
+									</>
+								)}
+							</div>
 						</div>
 					</div>
-					<div className='w-full flex justify-center items-center mb-8 mt-8'>
-						<div className='w-2/3 h-96 relative rounded-lg overflow-hidden'>
-							<Image fill src={'/projectPhoto.jpg'} alt='solar farm' />
-						</div>
-					</div>
-					<div className='w-full '>
-						<TitleText>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique asperiores laborum exercitationem quae
-							debitis nostrum magnam aperiam doloribus, sint nihil!
-						</TitleText>
-						<p className='text-darkText text-sm'>
-							Lorem ipsum dolor, sit amet consectetur adipisicing elit. At expedita accusamus autem ullam tempore
-							aliquam? Ea doloribus at, atque hic iure ipsam fuga quasi libero cumque facere a tempore obcaecati.
-						</p>
-					</div>
+					<Carousel />
+					<Technologies />
+
+					<OtherProjects projectId={projectId} />
 				</>
 			)}
 		</Wrapper>
