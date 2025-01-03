@@ -13,3 +13,9 @@ export interface ProjectProps {
 	commissioning: string
 	status: string
 }
+export interface SingleServiceProps {
+	text: string
+	src: string
+	single: boolean
+	href: string
+}
