@@ -29,7 +29,7 @@ const FaqSection = ({ items }: { items: faqItemProps[] }) => {
 
 			<div className='relative flex justify-center items-center w-full md:w-1/2'>
 				<div className=' w-72 md:w-96 h-72 md:h-96 relative'>
-					<Image src='/faqPhoto.jpg' className='rounded-full z-10 ' alt='Worker' fill />
+					<Image src='/faq/faqPhoto.webp' className='rounded-full z-10 ' alt='Worker' fill />
 					<div
 						className='absolute w-72 md:w-96 h-72 md:h-96 top-1/2 left-1/2 bg-primary rounded-full translate-x-[-50%] translate-y-[-50%] opacity-50'
 						style={{ transform: 'translate(calc(-50% + 20px), calc(-50% + 20px))' }}></div>

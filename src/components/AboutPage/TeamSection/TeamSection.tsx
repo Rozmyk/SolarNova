@@ -34,9 +34,9 @@ const TeamSection = () => {
 						ducimus sunt, nulla minus neque error?
 					</p>
 					<div className='w-full flex flex-col md:flex-row justify-center items-center gap-8'>
-						<SingleTeamCard src='/teamPortret1.jpg' name='Charles S. Brown' bottomText='Lead Developer' />
-						<SingleTeamCard center src='/teamPortret2.jpg' name='Md. Abu Taleb' bottomText='UI-UX Design' />
-						<SingleTeamCard src='/teamPortret3.jpg' name='Jannat Humayra' bottomText='Lead Marketing' />
+						<SingleTeamCard src='/team/teamPortret1.webp' name='Charles S. Brown' bottomText='Lead Developer' />
+						<SingleTeamCard center src='/team/teamPortret2.webp' name='Md. Abu Taleb' bottomText='UI-UX Design' />
+						<SingleTeamCard src='/team/teamPortret3.webp' name='Jannat Humayra' bottomText='Lead Marketing' />
 					</div>
 				</div>
 			</Wrapper>

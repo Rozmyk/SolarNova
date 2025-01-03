@@ -1,6 +1,6 @@
 const testimonialsData = [
 	{
-		src: '/customerAvatar1.jpg',
+		src: '/customers/customerAvatar1.webp',
 		reversed: false,
 		opinion:
 			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt aliquam architecto itaque expedita fugit. Consectetur atque culpa architecto.',
@@ -8,7 +8,7 @@ const testimonialsData = [
 		job: 'Brand Promoter',
 	},
 	{
-		src: '/customerAvatar2.jpg',
+		src: '/customers/customerAvatar2.webp',
 		reversed: true,
 		opinion:
 			'Doloribus illum atque distinctio, ratione ullam tenetur officiis quibusdam commodi numquam? Sed repellat similique adipisci accusantium laborum maiores.',
@@ -16,7 +16,7 @@ const testimonialsData = [
 		job: 'Software Engineer',
 	},
 	{
-		src: '/customerAvatar3.jpg',
+		src: '/customers/customerAvatar3.webp',
 		reversed: false,
 		opinion:
 			'Reiciendis delectus saepe animi corporis rerum! Vel reprehenderit libero alias, magnam corrupti iusto adipisci voluptatem!',
@@ -24,7 +24,7 @@ const testimonialsData = [
 		job: 'Marketing Specialist',
 	},
 	{
-		src: '/customerAvatar4.jpg',
+		src: '/customers/customerAvatar4.webp',
 		reversed: true,
 		opinion:
 			'Aliquid atque, impedit tempore temporibus ad quod! Porro laborum voluptate non eveniet, nostrum molestias cupiditate facilis ipsa!',
@@ -32,7 +32,7 @@ const testimonialsData = [
 		job: 'UI/UX Designer',
 	},
 	{
-		src: '/customerAvatar5.jpg',
+		src: '/customers/customerAvatar5.webp',
 		reversed: false,
 		opinion:
 			'Voluptatem, vero, quibusdam atque pariatur molestias repudiandae veniam asperiores eveniet, nesciunt tempora minus molestiae.',
@@ -40,7 +40,7 @@ const testimonialsData = [
 		job: 'Project Manager',
 	},
 	{
-		src: '/customerAvatar6.jpg',
+		src: '/customers/customerAvatar6.webp',
 		reversed: true,
 		opinion:
 			'Eum, officia ipsa repudiandae exercitationem. Sint amet fuga nulla quam debitis repellendus adipisci sapiente voluptatem!',
@@ -48,7 +48,7 @@ const testimonialsData = [
 		job: 'Graphic Designer',
 	},
 	{
-		src: '/customerAvatar7.jpg',
+		src: '/customers/customerAvatar7.webp',
 		reversed: false,
 		opinion:
 			'Ipsa labore, dicta nisi recusandae dolor quisquam voluptates possimus. Omnis necessitatibus eaque ducimus deserunt!',
@@ -56,7 +56,7 @@ const testimonialsData = [
 		job: 'Content Creator',
 	},
 	{
-		src: '/customerAvatar8.jpg',
+		src: '/customers/customerAvatar8.webp',
 		reversed: true,
 		opinion:
 			'Deleniti consectetur dolorum architecto, eveniet similique laborum pariatur neque repellendus, dolore, maxime quod reprehenderit!',
@@ -64,7 +64,7 @@ const testimonialsData = [
 		job: 'SEO Specialist',
 	},
 	{
-		src: '/customerAvatar9.jpg',
+		src: '/customers/customerAvatar9.webp',
 		reversed: false,
 		opinion:
 			'Magnam nobis velit quidem omnis molestiae repellat ullam voluptatibus quisquam architecto. Eligendi, incidunt deserunt?',
@@ -72,7 +72,7 @@ const testimonialsData = [
 		job: 'Digital Strategist',
 	},
 	{
-		src: '/customerAvatar10.jpg',
+		src: '/customers/customerAvatar10.webp',
 		reversed: true,
 		opinion:
 			'Voluptates, maiores facilis! Recusandae, iure id! Deserunt alias veritatis atque quis officia. Illum vitae maiores.',

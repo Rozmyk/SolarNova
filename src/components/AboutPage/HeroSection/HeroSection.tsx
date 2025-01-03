@@ -51,9 +51,9 @@ const HeroSection = () => {
 								height={isMobileView ? 300 : 440}
 								alt='solar farm'
 								className='absolute top-1/2 left-1/2 z-10  -translate-x-1/2 -translate-y-1/2'
-								src='/serviceImage.png'
+								src='/aboutUs/aboutUs.webp'
 							/>
-							<Image width={585} height={585} className='animate-spin-slow' src='/halfcircle.svg' alt='' />
+							<Image width={585} height={585} className='animate-spin-slow' src='/svg/halfcircle.svg' alt='' />
 						</div>
 					</div>
 					<div className='w-full md:w-1/2 '>

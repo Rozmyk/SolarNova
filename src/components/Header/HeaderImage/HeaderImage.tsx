@@ -10,13 +10,13 @@ const HeaderImage = () => {
 				<GoNorthStar size={100} color='#40cb7f' />
 			</div>
 
-			<Image width={750} height={500} alt='Wind turbine' src='/HeaderImage.png' />
+			<Image width={750} height={500} alt='Wind turbine' src='/header/HeaderImage.webp' />
 
 			<div className='w-36 h-36 absolute bottom-[-72px] md:bottom-10 left-1/2 translate-x-[-50%] md:left-[-75px] md:translate-x-0 backdrop-blur-lg bg-white bg-opacity-60 flex flex-col justify-center items-center rounded-md shadow-lg'>
 				<div className='flex -space-x-1 overflow-hidden mb-2 p-1'>
-					<SingleAvatar src='/customerAvatar1.jpg' alt='portrait of a woman' />
-					<SingleAvatar src='/customerAvatar2.jpg' alt='portrait of a  man' />
-					<SingleAvatar src='/customerAvatar3.jpg' alt='portrait of a young man' />
+					<SingleAvatar src='/customers/customerAvatar1.webp' alt='portrait of a woman' />
+					<SingleAvatar src='/customers/customerAvatar2.webp' alt='portrait of a  man' />
+					<SingleAvatar src='/customers/customerAvatar3.webp' alt='portrait of a young man' />
 				</div>
 				<p className=' text-2xl md:text-4xl font-medium text-secondary mb-2'>05K+</p>
 				<p className='text-md  text-[#6f6e6e]' style={{ fontWeight: 500 }}>

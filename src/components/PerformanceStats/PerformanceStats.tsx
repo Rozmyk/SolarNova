@@ -18,7 +18,7 @@ const PerformanceStats = () => {
 			<Wrapper>
 				<div className='w-full  flex flex-col md:flex-row justify-between items-center gap-10 relative z-10 p-4'>
 					<div className='w-full md:w-1/2 h-96  relative rounded-lg overflow-hidden'>
-						<Image src={'/statsImage.jpg'} fill alt='wind turbine on desert' />
+						<Image src={'/stats/statsImage.webp'} fill alt='wind turbine on desert' />
 					</div>
 					<div className='w-full md:w-1/2  flex flex-col '>
 						<div className='flex md:flex-row flex-col justify-between items-center'>

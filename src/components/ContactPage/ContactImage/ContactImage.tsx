@@ -31,7 +31,7 @@ const ContactImage = () => {
 					<IconWithText icon={MdAlternateEmail} title='Email' text='contact@solarnova.com' />
 				</div>
 
-				<Image width={350} height={300} className='rounded-lg' alt='Wind turbine' src='/contactImage.jpg' />
+				<Image width={350} height={300} className='rounded-lg' alt='Wind turbine' src='/contact/contactImage.webp' />
 			</div>
 		</div>
 	)

@@ -19,7 +19,7 @@ const Footer = () => {
 			<Wrapper className='mb-0'>
 				<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-start w-full gap-8 text-[#c6cbc9] p-8'>
 					<div className='flex flex-col items-center md:items-start mb-4'>
-						<Image width={120} height={100} alt='solarnova logo' src='/logoWhite.svg' className='mb-4' />
+						<Image width={120} height={100} alt='solarnova logo' src='/svg/logoWhite.svg' className='mb-4' />
 						<p className='text-sm mb-8 text-center md:text-start'>
 							We strive to be your trusted partner in the transition to a greener tomorrow
 						</p>

@@ -1,7 +1,19 @@
 import 'swiper/css'
 import TitleText from '@/components/ui/TitleText/TitleText'
 import { Swiper, SwiperSlide } from 'swiper/react'
-
+const SingleSlide = ({ image }: { image: string }) => {
+	return (
+		<SwiperSlide>
+			<div
+				style={{
+					backgroundImage: `url(${image})`,
+					backgroundSize: 'cover',
+					backgroundPosition: 'center',
+				}}
+				className={`w-full h-96 `}></div>
+		</SwiperSlide>
+	)
+}
 const RealizationsCarousel = () => {
 	return (
 		<div className='p-4 mb-8 mt-8'>
@@ -22,18 +34,11 @@ const RealizationsCarousel = () => {
 				loop
 				autoplay
 				className='w-full'>
-				<SwiperSlide>
-					<div className='w-full h-96 bg-blue-400'></div>
-				</SwiperSlide>{' '}
-				<SwiperSlide>
-					<div className='w-full h-96 bg-yellow-400'></div>
-				</SwiperSlide>{' '}
-				<SwiperSlide>
-					<div className='w-full h-96 bg-green-400'></div>
-				</SwiperSlide>
-				<SwiperSlide>
-					<div className='w-full h-96 bg-red-400'></div>
-				</SwiperSlide>
+				<SingleSlide image='/service/service.jpg' />
+				<SingleSlide image='/service/service.jpg' />
+				<SingleSlide image='/service/service.jpg' />
+				<SingleSlide image='/service/service.jpg' />
+				<SingleSlide image='/service/service.jpg' />
 			</Swiper>
 		</div>
 	)

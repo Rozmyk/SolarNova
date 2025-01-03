@@ -3,7 +3,7 @@ import Link from 'next/link'
 const HomeButton = () => {
 	return (
 		<Link href={'/'}>
-			<Image width={125} height={30} alt='solarnova logo' src='/logoBlack.svg' />
+			<Image width={125} height={30} alt='solarnova logo' src='/svg/logoBlack.svg' />
 		</Link>
 	)
 }
