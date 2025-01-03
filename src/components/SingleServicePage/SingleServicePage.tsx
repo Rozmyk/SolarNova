@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import { SingleServiceProps } from '@/types'
 import HeaderContent from './HeaderContent/HeaderContent'
 import HeaderImage from './HeaderImage/HeaderImage'
+import ErrorPage from '../ErrorPage/ErrorPage'
 const SingleServicePage = ({ serviceId }: { serviceId: string }) => {
 	const [singleServiceData, setSingleServiceData] = useState<SingleServiceProps | null>(null)
 	const [noFound, setNoFound] = useState(false)
@@ -22,10 +23,10 @@ const SingleServicePage = ({ serviceId }: { serviceId: string }) => {
 	return (
 		<Wrapper>
 			{noFound ? (
-				<p>sorry not found</p>
+				<ErrorPage />
 			) : (
 				singleServiceData && (
-					<div className='flex justify-between items-center gap-20'>
+					<div className='flex justify-between flex-col-reverse md:flex-row items-center gap-20 p-4'>
 						<HeaderContent title={singleServiceData.text} />
 						<HeaderImage src={singleServiceData.src} />
 					</div>
