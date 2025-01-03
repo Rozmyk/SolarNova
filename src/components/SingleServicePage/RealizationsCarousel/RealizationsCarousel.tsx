@@ -9,6 +9,11 @@ const RealizationsCarousel = () => {
 			<Swiper
 				breakpoints={{
 					0: {
+						slidesPerView: 1,
+						centeredSlides: true,
+						spaceBetween: 0,
+					},
+					1200: {
 						slidesPerView: 3,
 						centeredSlides: true,
 						spaceBetween: 25,
