@@ -15,7 +15,13 @@ export interface ProjectProps {
 }
 export interface SingleServiceProps {
 	text: string
+	description: string
 	src: string
 	single: boolean
 	href: string
+	faq: faqItemProps[]
+}
+export interface faqItemProps {
+	question: string
+	answer: string
 }
