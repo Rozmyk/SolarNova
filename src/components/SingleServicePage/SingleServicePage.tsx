@@ -7,6 +7,8 @@ import HeaderContent from './HeaderContent/HeaderContent'
 import HeaderImage from './HeaderImage/HeaderImage'
 import ErrorPage from '../ErrorPage/ErrorPage'
 import HelpSection from './HelpSection/HelpSection'
+import RealizationsCarousel from './RealizationsCarousel/RealizationsCarousel'
+import Faq from './Faq/Faq'
 const SingleServicePage = ({ serviceId }: { serviceId: string }) => {
 	const [singleServiceData, setSingleServiceData] = useState<SingleServiceProps | null>(null)
 	const [noFound, setNoFound] = useState(false)
@@ -36,6 +38,8 @@ const SingleServicePage = ({ serviceId }: { serviceId: string }) => {
 							<p className='text-secondary font-semibold text-center'>{singleServiceData.description}</p>
 						</div>
 						<HelpSection />
+						<RealizationsCarousel />
+						<Faq items={singleServiceData.faq} />
 					</>
 				)
 			)}
