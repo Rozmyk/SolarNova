@@ -13,7 +13,7 @@ const OtherProjects = ({ projectId }: { projectId: string }) => {
 		getOtherProjects()
 	}, [projectId])
 	return (
-		<div>
+		<div className='p-4'>
 			<TitleText>Other projects</TitleText>
 			<div className='w-full flex flex-col md:flex-row justify-between items-center p-4 '>
 				{projects &&
