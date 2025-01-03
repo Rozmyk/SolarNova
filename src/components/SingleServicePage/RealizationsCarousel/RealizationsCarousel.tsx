@@ -3,15 +3,13 @@ import TitleText from '@/components/ui/TitleText/TitleText'
 import { Swiper, SwiperSlide } from 'swiper/react'
 const SingleSlide = ({ image }: { image: string }) => {
 	return (
-		<SwiperSlide>
-			<div
-				style={{
-					backgroundImage: `url(${image})`,
-					backgroundSize: 'cover',
-					backgroundPosition: 'center',
-				}}
-				className={`w-full h-96 `}></div>
-		</SwiperSlide>
+		<div
+			style={{
+				backgroundImage: `url(${image})`,
+				backgroundSize: 'cover',
+				backgroundPosition: 'center',
+			}}
+			className={`w-full h-96  rounded-lg `}></div>
 	)
 }
 const RealizationsCarousel = () => {
@@ -34,11 +32,18 @@ const RealizationsCarousel = () => {
 				loop
 				autoplay
 				className='w-full'>
-				<SingleSlide image='/service/service.jpg' />
-				<SingleSlide image='/service/service.jpg' />
-				<SingleSlide image='/service/service.jpg' />
-				<SingleSlide image='/service/service.jpg' />
-				<SingleSlide image='/service/service.jpg' />
+				<SwiperSlide>
+					<SingleSlide image='/projects/project1.jpg' />
+				</SwiperSlide>
+				<SwiperSlide>
+					<SingleSlide image='/projects/project1.jpg' />
+				</SwiperSlide>
+				<SwiperSlide>
+					<SingleSlide image='/projects/project1.jpg' />
+				</SwiperSlide>
+				<SwiperSlide>
+					<SingleSlide image='/projects/project1.jpg' />
+				</SwiperSlide>
 			</Swiper>
 		</div>
 	)
