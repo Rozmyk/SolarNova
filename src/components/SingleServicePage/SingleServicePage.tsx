@@ -32,6 +32,9 @@ const SingleServicePage = ({ serviceId }: { serviceId: string }) => {
 							<HeaderContent title={singleServiceData.text} />
 							<HeaderImage src={singleServiceData.src} />
 						</div>
+						<div className='p-4 mb-8 mt-8'>
+							<p className='text-secondary font-semibold text-center'>{singleServiceData.description}</p>
+						</div>
 						<HelpSection />
 					</>
 				)
