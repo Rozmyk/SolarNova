@@ -1,6 +1,12 @@
 const servicesData = [
 	{
 		text: 'Solar energy',
+		gallery: [
+			'/service/solarEnergy/gallery1.webp',
+			'/service/solarEnergy/gallery2.webp',
+			'/service/solarEnergy/gallery3.webp',
+			'/service/solarEnergy/gallery4.webp',
+		],
 		description:
 			'Solar energy offers an innovative and sustainable way to generate electricity directly from sunlight. By installing solar panels on your home, business, or farm, you can enjoy significant reductions in electricity bills, while also protecting yourself against future increases in energy costs. Beyond financial savings, solar energy contributes to a greener planet by reducing your carbon footprint. This renewable energy source ensures long-term energy independence and adds value to your property, making it a smart choice for environmentally-conscious individuals and businesses.',
 		src: '/service/solarEnergy.webp',
@@ -31,6 +37,12 @@ const servicesData = [
 	},
 	{
 		text: 'Wind energy',
+		gallery: [
+			'/service/windEnergy/gallery1.webp',
+			'/service/windEnergy/gallery2.webp',
+			'/service/windEnergy/gallery3.webp',
+			'/service/windEnergy/gallery4.webp',
+		],
 		description:
 			'Wind energy harnesses the power of nature to generate clean, renewable electricity. By capturing the kinetic energy of wind through turbines, this sustainable energy source helps reduce dependency on fossil fuels and significantly lowers greenhouse gas emissions. Wind energy is an environmentally friendly alternative that contributes to a greener future and promotes energy security. With advancements in technology, wind turbines are becoming more efficient and accessible, offering communities and businesses an opportunity to invest in a sustainable and cost-effective energy solution.',
 		src: '/service/windEnergy.webp',
@@ -61,6 +73,12 @@ const servicesData = [
 	},
 	{
 		text: 'Module washing',
+		gallery: [
+			'/service/moduleWashing/gallery1.webp',
+			'/service/moduleWashing/gallery2.webp',
+			'/service/moduleWashing/gallery3.webp',
+			'/service/moduleWashing/gallery4.webp',
+		],
 		description:
 			'Regular cleaning of solar modules is essential to ensure their optimal performance and extend their lifespan. Over time, dust, dirt, and debris accumulate on the surface of solar panels, reducing their ability to absorb sunlight effectively. Professional module washing services utilize specialized tools and techniques to safely and efficiently remove these obstructions, maximizing the energy output of your solar system. By maintaining clean panels, you can enjoy consistent energy savings and ensure the long-term reliability of your investment.',
 		src: '/service/cleanModules.jpg',
@@ -91,6 +109,12 @@ const servicesData = [
 	},
 	{
 		text: 'Service',
+		gallery: [
+			'/service/service/gallery1.webp',
+			'/service/service/gallery2.webp',
+			'/service/service/gallery3.webp',
+			'/service/service/gallery4.webp',
+		],
 		description:
 			'Our comprehensive maintenance and repair services are designed to keep your energy systems running at peak performance. From regular inspections and cleaning to troubleshooting and fixing faults, we ensure that your system remains reliable and efficient. Proper maintenance not only prolongs the lifespan of your energy equipment but also prevents unexpected breakdowns, saving you time and money. Whether you require routine servicing or emergency repairs, our experienced technicians are here to help.',
 		src: '/service/service.jpg',
@@ -121,6 +145,12 @@ const servicesData = [
 	},
 	{
 		text: 'Heat pumps',
+		gallery: [
+			'/service/heatPumps/gallery1.webp',
+			'/service/heatPumps/gallery2.webp',
+			'/service/heatPumps/gallery3.webp',
+			'/service/heatPumps/gallery4.webp',
+		],
 		description:
 			'Heat pumps represent an advanced and eco-friendly solution for heating and cooling your home. By extracting energy from natural sources like air, water, or the ground, heat pumps efficiently provide warmth during winter and cooling during summer. This innovative technology can reduce energy consumption by up to 75% compared to traditional systems, offering significant cost savings and reducing your environmental impact. Investing in a heat pump not only ensures a comfortable indoor climate but also supports sustainable living.',
 		src: '/service/heatPumps.jpg',
