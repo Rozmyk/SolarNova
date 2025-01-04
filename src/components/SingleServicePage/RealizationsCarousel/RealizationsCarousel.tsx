@@ -1,6 +1,7 @@
 import 'swiper/css'
 import TitleText from '@/components/ui/TitleText/TitleText'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay } from 'swiper/modules'
 const SingleSlide = ({ image }: { image: string }) => {
 	return (
 		<div
@@ -12,11 +13,12 @@ const SingleSlide = ({ image }: { image: string }) => {
 			className={`w-full h-96  rounded-lg `}></div>
 	)
 }
-const RealizationsCarousel = () => {
+const RealizationsCarousel = ({ gallery }: { gallery: string[] }) => {
 	return (
 		<div className='p-4 mb-8 mt-8'>
 			<TitleText>Our realizations </TitleText>
 			<Swiper
+				modules={[Autoplay]}
 				breakpoints={{
 					0: {
 						slidesPerView: 1,
@@ -32,18 +34,11 @@ const RealizationsCarousel = () => {
 				loop
 				autoplay
 				className='w-full'>
-				<SwiperSlide>
-					<SingleSlide image='/projects/project1.jpg' />
-				</SwiperSlide>
-				<SwiperSlide>
-					<SingleSlide image='/projects/project1.jpg' />
-				</SwiperSlide>
-				<SwiperSlide>
-					<SingleSlide image='/projects/project1.jpg' />
-				</SwiperSlide>
-				<SwiperSlide>
-					<SingleSlide image='/projects/project1.jpg' />
-				</SwiperSlide>
+				{gallery.map((image, index) => (
+					<SwiperSlide key={index}>
+						<SingleSlide image={image} key={index} />
+					</SwiperSlide>
+				))}
 			</Swiper>
 		</div>
 	)
