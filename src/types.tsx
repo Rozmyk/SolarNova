@@ -18,6 +18,7 @@ export interface SingleServiceProps {
 	description: string
 	src: string
 	single: boolean
+	gallery: string[]
 	href: string
 	faq: faqItemProps[]
 }
