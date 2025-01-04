@@ -38,7 +38,7 @@ const SingleServicePage = ({ serviceId }: { serviceId: string }) => {
 							<p className='text-secondary font-semibold text-center'>{singleServiceData.description}</p>
 						</div>
 						<HelpSection />
-						<RealizationsCarousel />
+						<RealizationsCarousel gallery={singleServiceData.gallery} />
 						<Faq items={singleServiceData.faq} />
 					</>
 				)
