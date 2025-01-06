@@ -5,7 +5,6 @@ import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 
 const HeaderContent = () => {
-	const container = useRef(null)
 	const title = useRef(null)
 	const paragraph = useRef(null)
 	const button = useRef(null)
@@ -20,7 +19,7 @@ const HeaderContent = () => {
 	}, [])
 
 	return (
-		<div ref={container} className='w-full md:w-2/3 p-4'>
+		<div className='w-full md:w-2/3 p-4'>
 			<h1 ref={title} className='text-4xl md:text-7xl xl:text-8xl mb-4 md:mb-8 font-semibold w-full text-secondary'>
 				More Greener <br />
 				More Renewable <br />
