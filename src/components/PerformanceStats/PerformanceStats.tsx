@@ -6,11 +6,31 @@ import { GoNorthStar } from 'react-icons/go'
 import Clients from './Clients/Clients'
 import gsap from 'gsap'
 
-const SingleNumberedTile = ({ number, title }: { number: string; title: string }) => {
+const SingleNumberedTile = ({ number, title }: { number: number; title: string }) => {
+	const numberRef = useRef<HTMLParagraphElement>(null)
+
+	useEffect(() => {
+		if (numberRef.current) {
+			const target = { value: 0 }
+			gsap.to(target, {
+				value: number,
+				duration: 2,
+				ease: 'power1.out',
+				onUpdate: () => {
+					if (numberRef.current) {
+						numberRef.current.textContent = Math.floor(target.value).toString()
+					}
+				},
+			})
+		}
+	}, [number])
+
 	return (
-		<div className='w-full h-44 flex flex-col justify-center items-center bg-[#f7f9f6] rounded-lg drop-shadow-md m-2 '>
+		<div className='w-full h-44 flex flex-col justify-center items-center bg-[#f7f9f6] rounded-lg drop-shadow-md m-2'>
 			<div>
-				<p className='text-center text-black font-medium text-4xl mb-4'>{number}</p>
+				<p ref={numberRef} className='text-center text-black font-medium text-4xl mb-4'>
+					0
+				</p>
 				<p className='text-darkText text-center'>{title}</p>
 			</div>
 		</div>
@@ -68,12 +88,12 @@ const PerformanceStats = () => {
 					</div>
 					<div className='w-full md:w-1/2 flex flex-col'>
 						<div className='flex md:flex-row flex-col justify-between items-center'>
-							<SingleNumberedTile number='1.5K' title='Instalation' />
-							<SingleNumberedTile number='20' title='Country served' />
+							<SingleNumberedTile number={720} title='Instalation' />
+							<SingleNumberedTile number={20} title='Country served' />
 						</div>
 						<div className='flex md:flex-row flex-col justify-between items-center'>
-							<SingleNumberedTile number='60%' title='Energy saving' />
-							<SingleNumberedTile number='86' title='Our partner' />
+							<SingleNumberedTile number={60} title='Energy saving' />
+							<SingleNumberedTile number={86} title='Our partner' />
 						</div>
 					</div>
 				</div>
