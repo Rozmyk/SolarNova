@@ -1,10 +1,9 @@
 'use client'
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 import Wrapper from '../Wrapper/Wrapper'
 import Image from 'next/image'
 import { GoNorthStar } from 'react-icons/go'
 import Clients from './Clients/Clients'
-import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 
 const SingleNumberedTile = ({ number, title }: { number: string; title: string }) => {
@@ -20,38 +19,41 @@ const SingleNumberedTile = ({ number, title }: { number: string; title: string }
 
 const PerformanceStats = () => {
 	const containerRef = useRef<HTMLDivElement>(null)
+	let observer: IntersectionObserver
 
-	useGSAP(() => {
+	useEffect(() => {
 		gsap.registerPlugin()
 
-		const animate = (target: Element) => {
-			gsap.from(target.children, {
-				opacity: 0,
-				y: 50,
-				duration: 0.5,
-				stagger: 0.2,
-				ease: 'power2.out',
-			})
-		}
-
-		const observer = new IntersectionObserver(
-			entries => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting) {
-						animate(entry.target)
-						observer.unobserve(entry.target)
-					}
-				})
-			},
-			{ threshold: 0.5 }
-		)
-
 		if (containerRef.current) {
+			gsap.set(containerRef.current.children, { opacity: 0, y: 50 })
+
+			const animate = (target: Element) => {
+				gsap.to(target.children, {
+					opacity: 1,
+					y: 0,
+					duration: 0.5,
+					stagger: 0.2,
+					ease: 'power2.out',
+				})
+			}
+
+			observer = new IntersectionObserver(
+				entries => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							animate(entry.target)
+							observer.unobserve(entry.target)
+						}
+					})
+				},
+				{ threshold: 0.5 }
+			)
+
 			observer.observe(containerRef.current)
 		}
 
 		return () => {
-			observer.disconnect()
+			if (observer) observer.disconnect()
 		}
 	}, [])
 
