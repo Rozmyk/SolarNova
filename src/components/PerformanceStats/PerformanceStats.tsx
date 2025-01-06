@@ -8,25 +8,63 @@ import gsap from 'gsap'
 
 const SingleNumberedTile = ({ number, title }: { number: number; title: string }) => {
 	const numberRef = useRef<HTMLParagraphElement>(null)
+	const tileRef = useRef<HTMLDivElement>(null)
+	let observer: IntersectionObserver
 
 	useEffect(() => {
-		if (numberRef.current) {
-			const target = { value: 0 }
-			gsap.to(target, {
-				value: number,
-				duration: 2,
-				ease: 'power1.out',
-				onUpdate: () => {
-					if (numberRef.current) {
-						numberRef.current.textContent = Math.floor(target.value).toString()
-					}
+		if (tileRef.current) {
+			gsap.set(tileRef.current, { opacity: 0, y: 50 })
+
+			const animate = (target: Element) => {
+				gsap.to(target, {
+					opacity: 1,
+					y: 0,
+					duration: 0.5,
+					ease: 'power2.out',
+				})
+			}
+
+			const animateNumber = () => {
+				if (numberRef.current) {
+					const target = { value: 0 }
+					gsap.to(target, {
+						value: number,
+						duration: 2,
+						ease: 'power1.out',
+						onUpdate: () => {
+							if (numberRef.current) {
+								numberRef.current.textContent = Math.floor(target.value).toString()
+							}
+						},
+					})
+				}
+			}
+
+			observer = new IntersectionObserver(
+				entries => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							animate(entry.target)
+							animateNumber()
+							observer.unobserve(entry.target)
+						}
+					})
 				},
-			})
+				{ threshold: 0.5 }
+			)
+
+			observer.observe(tileRef.current)
+
+			return () => {
+				if (observer) observer.disconnect()
+			}
 		}
 	}, [number])
 
 	return (
-		<div className='w-full h-44 flex flex-col justify-center items-center bg-[#f7f9f6] rounded-lg drop-shadow-md m-2'>
+		<div
+			ref={tileRef}
+			className='w-full h-44 flex flex-col justify-center items-center bg-[#f7f9f6] rounded-lg drop-shadow-md m-2'>
 			<div>
 				<p ref={numberRef} className='text-center text-black font-medium text-4xl mb-4'>
 					0
@@ -39,7 +77,6 @@ const SingleNumberedTile = ({ number, title }: { number: number; title: string }
 
 const PerformanceStats = () => {
 	const containerRef = useRef<HTMLDivElement>(null)
-	let observer: IntersectionObserver
 
 	useEffect(() => {
 		gsap.registerPlugin()
@@ -57,7 +94,7 @@ const PerformanceStats = () => {
 				})
 			}
 
-			observer = new IntersectionObserver(
+			const observer = new IntersectionObserver(
 				entries => {
 					entries.forEach(entry => {
 						if (entry.isIntersecting) {
@@ -70,10 +107,10 @@ const PerformanceStats = () => {
 			)
 
 			observer.observe(containerRef.current)
-		}
 
-		return () => {
-			if (observer) observer.disconnect()
+			return () => {
+				observer.disconnect()
+			}
 		}
 	}, [])
 
