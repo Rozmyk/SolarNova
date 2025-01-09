@@ -1,5 +1,9 @@
 import { MdLocalPhone, MdAlternateEmail, MdAccessTime } from 'react-icons/md'
 import Image from 'next/image'
+import { useRef, useEffect } from 'react'
+import { gsap } from 'gsap'
+import { useGSAP } from '@gsap/react'
+
 const IconWithText = ({
 	title,
 	text,
@@ -21,17 +25,28 @@ const IconWithText = ({
 		</div>
 	)
 }
+
 const ContactImage = () => {
+	const imageRef = useRef<HTMLDivElement>(null)
+
+	useGSAP(() => {
+		gsap.registerPlugin()
+
+		const tl = gsap.timeline()
+		tl.from(imageRef.current, { scale: 0.8, duration: 0.5, ease: 'power2.out' })
+	}, [])
+
 	return (
-		<div className='w-full md:w-1/2   flex justify-center items-center  '>
-			<div className='relative h-full mb-48 md:mb-0 '>
-				<div className='w-48 h-48 backdrop-blur-lg bg-white bg-opacity-90 rounded-md shadow-lg absolute bottom-[-96px] md:bottom-10 right-1/2 md:right-0 transform translate-x-1/2 flex flex-col justify-center items-start gap-2 p-4 '>
+		<div className='w-full md:w-1/2 flex justify-center items-center'>
+			<div className='relative h-full mb-48 md:mb-0'>
+				<div className='w-48 h-48 backdrop-blur-lg bg-white bg-opacity-90 rounded-md shadow-lg absolute bottom-[-96px] md:bottom-10 right-1/2 md:right-0 transform translate-x-1/2 flex flex-col justify-center items-start z-10 gap-2 p-4'>
 					<IconWithText icon={MdAccessTime} title='Hours' text='9.00–22.00' />
 					<IconWithText icon={MdLocalPhone} title='Phone' text='123 456 789' />
 					<IconWithText icon={MdAlternateEmail} title='Email' text='contact@solarnova.com' />
 				</div>
-
-				<Image width={350} height={300} className='rounded-lg' alt='Wind turbine' src='/contact/contactImage.webp' />
+				<div ref={imageRef}>
+					<Image width={350} height={300} className='rounded-lg' alt='Wind turbine' src='/contact/contactImage.webp' />
+				</div>
 			</div>
 		</div>
 	)
