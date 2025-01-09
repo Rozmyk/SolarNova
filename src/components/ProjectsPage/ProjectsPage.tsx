@@ -1,11 +1,13 @@
 'use client'
-import { Dispatch, SetStateAction, useState } from 'react'
+import { Dispatch, SetStateAction, useState, useRef, useEffect } from 'react'
 import Wrapper from '../Wrapper/Wrapper'
 import projectData from '../../../data/projectsData'
 import ProjectCard from '../Projects/ProjectCard/ProjectCard'
 import TitleText from '../ui/TitleText/TitleText'
 import { MdKeyboardDoubleArrowUp } from 'react-icons/md'
 import { TbNorthStar } from 'react-icons/tb'
+import gsap from 'gsap'
+import React from 'react'
 
 const SortBy = ({ onSortChange }: { onSortChange: Dispatch<SetStateAction<string>> }) => {
 	return (
@@ -32,13 +34,44 @@ const ProjectsPage = () => {
 		return sortOrder === 'latest' ? b.date - a.date : a.date - b.date
 	})
 
+	const cardRefs = useRef(sortedProjects.map(() => React.createRef<HTMLDivElement>()))
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			entries => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						const index = cardRefs.current.findIndex(ref => ref.current === entry.target)
+						gsap.fromTo(
+							entry.target,
+							{ opacity: 0 },
+							{ opacity: 1, duration: 0.2, ease: 'power2.out', delay: index * 0.1 }
+						)
+						observer.unobserve(entry.target)
+					}
+				})
+			},
+			{ threshold: 0.1 }
+		)
+
+		cardRefs.current.forEach(ref => {
+			if (ref.current) {
+				observer.observe(ref.current)
+			}
+		})
+
+		return () => {
+			observer.disconnect()
+		}
+	}, [sortedProjects])
+
 	return (
-		<div className='overflow-hidden  relative'>
-			<div className='absolute opacity-10 top-96 right-10 rotate-12 '>
+		<div className='overflow-hidden relative'>
+			<div className='absolute opacity-10 top-96 right-10 rotate-12'>
 				<TbNorthStar size={200} color='#40cb7f' />
 			</div>
 			<Wrapper>
-				<div className=' w-full flex flex-col justify-center items-center overflow-hidden'>
+				<div className='w-full flex flex-col justify-center items-center overflow-hidden'>
 					<div className='w-full flex md:flex-row flex-col justify-between items-center gap-4 mb-8 p-4'>
 						<div className='w-full md:w-1/2'>
 							<TitleText>Our Projects</TitleText>
@@ -58,18 +91,19 @@ const ProjectsPage = () => {
 							local communities and economies.
 						</p>
 					</div>
-					<div
-						className='grid w-full gap-8 max-w-screen-lg 
-                  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-8'>
-						{sortedProjects.map(project => (
-							<div className='w-full h-full flex justify-center items-center' key={project.id}>
+					<div className='grid w-full gap-8 max-w-screen-lg grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-8'>
+						{sortedProjects.map((project, index) => (
+							<div
+								ref={cardRefs.current[index]}
+								className='w-full h-full flex justify-center items-center'
+								key={project.id}>
 								<ProjectCard {...project} />
 							</div>
 						))}
 					</div>
 				</div>
 			</Wrapper>
-			<div className='absolute  bottom-20 left-10 rotate-12  ' style={{ opacity: 0.03 }}>
+			<div className='absolute bottom-20 left-10 rotate-12' style={{ opacity: 0.03 }}>
 				<MdKeyboardDoubleArrowUp size={400} color='black' />
 			</div>
 		</div>
