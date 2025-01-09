@@ -10,7 +10,7 @@ import HelpSection from './HelpSection/HelpSection'
 import RealizationsCarousel from './RealizationsCarousel/RealizationsCarousel'
 import Faq from './Faq/Faq'
 import gsap from 'gsap'
-import { useGSAP } from '@gsap/react'
+
 const SingleServicePage = ({ serviceId }: { serviceId: string }) => {
 	const [singleServiceData, setSingleServiceData] = useState<SingleServiceProps | null>(null)
 	const [noFound, setNoFound] = useState(false)

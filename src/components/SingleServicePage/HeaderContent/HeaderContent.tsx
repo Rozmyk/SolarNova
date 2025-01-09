@@ -1,7 +1,7 @@
 import Button from '@/components/ui/Button/Button'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
-import { useRef, useEffect } from 'react'
+import { useRef } from 'react'
 import { useRouter } from 'next/navigation'
 
 const HeaderContent = ({ title }: { title: string }) => {
