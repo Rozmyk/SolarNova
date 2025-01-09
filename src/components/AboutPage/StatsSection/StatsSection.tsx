@@ -1,20 +1,80 @@
+'use client'
 import Button from '@/components/ui/Button/Button'
 import Wrapper from '@/components/Wrapper/Wrapper'
+import { useRef, useEffect } from 'react'
+import gsap from 'gsap'
+
 const SingleService = ({
 	number,
 	unit,
 	titleLine1,
 	titleLine2,
 }: {
-	number: string
+	number: number
 	unit: string
 	titleLine1: string
 	titleLine2: string
 }) => {
+	const numberRef = useRef<HTMLParagraphElement>(null)
+	const tileRef = useRef<HTMLDivElement>(null)
+	let observer: IntersectionObserver
+	useEffect(() => {
+		if (tileRef.current) {
+			gsap.set(tileRef.current, { opacity: 0, y: 50 })
+
+			const animate = (target: Element) => {
+				gsap.to(target, {
+					opacity: 1,
+					y: 0,
+					duration: 0.5,
+					ease: 'power2.out',
+				})
+			}
+
+			const animateNumber = () => {
+				if (numberRef.current) {
+					const target = { value: 0 }
+					gsap.to(target, {
+						value: number,
+						duration: 2,
+						ease: 'power1.out',
+						onUpdate: () => {
+							if (numberRef.current) {
+								numberRef.current.textContent = Math.floor(target.value).toString()
+							}
+						},
+					})
+				}
+			}
+
+			observer = new IntersectionObserver(
+				entries => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							animate(entry.target)
+							animateNumber()
+							observer.unobserve(entry.target)
+						}
+					})
+				},
+				{ threshold: 0.5 }
+			)
+
+			observer.observe(tileRef.current)
+
+			return () => {
+				if (observer) observer.disconnect()
+			}
+		}
+	}, [number])
+
 	return (
 		<div className='flex flex-col items-center justify-center text-center'>
-			<div className='text-4xl font-bold mb-2'>
-				<span className='text-secondary'>{number}</span> <span className='text-primary'>{unit}</span>
+			<div ref={tileRef} className='text-4xl font-bold mb-2'>
+				<span ref={numberRef} className='text-secondary'>
+					{number}
+				</span>{' '}
+				<span className='text-primary'>{unit}</span>
 			</div>
 			<p className='text-gray-500'>{titleLine1}</p>
 			<p className='text-gray-500'>{titleLine2}</p>
@@ -33,13 +93,13 @@ const StatsSection = () => {
 				<Button>Get Started</Button>
 			</div>
 			<div className=' w-full  flex md:flex-row flex-col gap-8 md:gap-0 justify-between items-center'>
-				<SingleService number='174,485' unit='kWp' titleLine1='Zainstalowana moc' titleLine2='fotowoltaiczna' />
+				<SingleService number={174.485} unit='kWp' titleLine1='Installed Solar Power' titleLine2='Capacity' />
 				<div className='w-px h-16 bg-gray-300' />
-				<SingleService number='174,485' unit='kWp' titleLine1='Zainstalowana moc' titleLine2='fotowoltaiczna' />
+				<SingleService number={2.356} unit='Projects' titleLine1='Completed Renewable' titleLine2='Energy Projects' />
 				<div className='w-px h-16 bg-gray-300' />
-				<SingleService number='174,485' unit='kWp' titleLine1='Zainstalowana moc' titleLine2='fotowoltaiczna' />
+				<SingleService number={15} unit='Years' titleLine1='Experience in the' titleLine2='Energy Sector' />
 				<div className='w-px h-16 bg-gray-300' />
-				<SingleService number='174,485' unit='kWp' titleLine1='Zainstalowana moc' titleLine2='fotowoltaiczna' />
+				<SingleService number={400} unit='Satisfaction' titleLine1='Customer Satisfaction' titleLine2='Rate' />
 			</div>
 		</Wrapper>
 	)
