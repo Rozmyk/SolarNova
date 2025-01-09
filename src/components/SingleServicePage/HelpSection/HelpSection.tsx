@@ -2,6 +2,8 @@ import TitleText from '@/components/ui/TitleText/TitleText'
 import { FaSolarPanel } from 'react-icons/fa'
 import { MdArchitecture } from 'react-icons/md'
 import { GrUserWorker } from 'react-icons/gr'
+import { useEffect, useRef } from 'react'
+import gsap from 'gsap'
 
 const SingleCard = ({
 	title,
@@ -14,8 +16,8 @@ const SingleCard = ({
 }) => {
 	return (
 		<div className='flex flex-col justify-center items-center w-full md:w-1/3'>
-			<div className='p-2 rounded-full  mb-2 border-dashed border-gray-200 border-2 '>
-				<div className='p-4 bg-primary rounded-full '>
+			<div className='p-2 rounded-full mb-2 border-dashed border-gray-200 border-2'>
+				<div className='p-4 bg-primary rounded-full'>
 					<Icon size={55} />
 				</div>
 			</div>
@@ -24,11 +26,38 @@ const SingleCard = ({
 		</div>
 	)
 }
+
 const HelpSection = () => {
+	const sectionRef = useRef(null)
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			entries => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						gsap.fromTo(entry.target, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1, ease: 'power2.out' })
+						observer.unobserve(entry.target)
+					}
+				})
+			},
+			{ threshold: 0.1 }
+		)
+
+		if (sectionRef.current) {
+			observer.observe(sectionRef.current)
+		}
+
+		return () => {
+			if (sectionRef.current) {
+				observer.unobserve(sectionRef.current)
+			}
+		}
+	}, [])
+
 	return (
-		<div className='p-8'>
+		<div ref={sectionRef} className='p-8'>
 			<TitleText>How can we help you?</TitleText>
-			<div className='flex flex-col md:flex-row justify-between items-center gap-8 mt-8   mb-8 '>
+			<div className='flex flex-col md:flex-row justify-between items-center gap-8 mt-8 mb-8'>
 				<SingleCard
 					icon={FaSolarPanel}
 					title='Sale'
