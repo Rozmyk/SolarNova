@@ -77,12 +77,11 @@ const HeroSection = () => {
 					</div>
 					<div className='w-full md:w-1/2 '>
 						<h1 ref={title} className=' text-lg md:text-2xl xl:text-4xl  mb-4  font-semibold  w-full  text-secondary'>
-							The Best Finance Consulting in Town Since 2007
+							Empowering a Sustainable Future | About Us
 						</h1>
 						<p ref={description} className='text-sm text-darkText'>
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos cumque temporibus quibusdam ea
-							veritatis tempore, numquam iusto obcaecati odio vero tenetur ut dicta rem accusantium quisquam iure quia
-							ex cum!
+							Learn more about our mission to revolutionize energy solutions with cutting-edge renewable technologies.
+							Discover how we’re making sustainable living accessible and driving a greener future for everyone.
 						</p>
 						<div ref={icons} className='flex justify-start items-center gap-4'>
 							<TextWithIcon icon={CiBadgeDollar} text='Bussines Planning & Technologist' />
