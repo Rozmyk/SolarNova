@@ -1,21 +1,31 @@
 'use client'
 import Wrapper from '../Wrapper/Wrapper'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import TitleText from '../ui/TitleText/TitleText'
 import Button from '../ui/Button/Button'
 import { useRouter } from 'next/navigation'
 import servicesData from '../../../data/servicesData'
+import { gsap } from 'gsap'
 
 const SingleCard = ({ text, single, src, href }: { text: string; single: boolean; src: string; href: string }) => {
 	const [hovered, setHovered] = useState(false)
 	const router = useRouter()
+	const cardRef = useRef<HTMLDivElement>(null)
+
 	const handleClick = (href: string) => {
 		router.push(`/service/${href}`)
 	}
 
+	useEffect(() => {
+		if (cardRef.current) {
+			gsap.fromTo(cardRef.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1 })
+		}
+	}, [])
+
 	return (
 		<div
-			className={`relative  overflow-hidden p-4 bg-white shadow-md h-60 rounded-xl transition-transform duration-200 ${
+			ref={cardRef}
+			className={`relative overflow-hidden p-4 bg-white shadow-md h-60 rounded-xl transition-transform duration-200 ${
 				single ? 'col-span-1 sm:col-span-2 md:col-span-1' : 'col-span-1  md:col-span-2'
 			}`}
 			onMouseEnter={() => setHovered(true)}
