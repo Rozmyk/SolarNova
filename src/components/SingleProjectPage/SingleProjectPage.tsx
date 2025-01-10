@@ -3,7 +3,7 @@ import Spinner from '../ui/Spinner/Spinner'
 import Wrapper from '../Wrapper/Wrapper'
 import ProjectImage from './ProjectImage/ProjectImage'
 import projectData from '../../../data/projectsData'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, } from 'react'
 import Technologies from './Technologies/Technologies'
 import Carousel from './Carousel/Carousel'
 import OtherProjects from './OtherProjects/OtherProjects'
@@ -22,6 +22,7 @@ const SingleProjectProfile = ({ label, value }: { label: string; value: string }
 const SingleProjectPage = ({ projectId }: { projectId: string }) => {
 	const [singleProjectData, setSingleProjectData] = useState<ProjectProps | null>(null)
 	const [projectLoading, setProjectLoading] = useState(true)
+
 	const findProjectById = (projectId: string) => {
 		return projectData.find(project => project.id === projectId)
 	}
