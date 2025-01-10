@@ -5,7 +5,7 @@ import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import TitleText from '@/components/ui/TitleText/TitleText'
 import Button from '@/components/ui/Button/Button'
-import { GoCircle } from 'react-icons/go'
+
 import { PiDotsNineThin } from 'react-icons/pi'
 
 const ProjectImage = ({ title, description, src }: { title: string; description: string; src: string }) => {
