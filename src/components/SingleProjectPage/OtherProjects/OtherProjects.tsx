@@ -5,6 +5,7 @@ import { useState, useEffect, useRef } from 'react'
 import TitleText from '@/components/ui/TitleText/TitleText'
 import { ProjectProps } from '@/types'
 import gsap from 'gsap'
+import Wrapper from '@/components/Wrapper/Wrapper'
 
 const OtherProjects = ({ projectId }: { projectId: string }) => {
 	const [projects, setProjects] = useState<ProjectProps[]>([])
@@ -43,23 +44,25 @@ const OtherProjects = ({ projectId }: { projectId: string }) => {
 	}, [projects])
 
 	return (
-		<div ref={containerRef} className='p-4 opacity-0'>
-			<TitleText>Other projects</TitleText>
-			<div className='w-full flex flex-col md:flex-row justify-between items-center p-4 '>
-				{projects &&
-					projects.map(project => (
-						<div key={project.id} className='w-full h-full flex justify-center items-center '>
-							<ProjectCard
-								id={project.id}
-								src={project.src}
-								title={project.title}
-								date={project.date}
-								author={project.author}
-							/>
-						</div>
-					))}
+		<Wrapper>
+			<div ref={containerRef} className='p-4 opacity-0'>
+				<TitleText>Other projects</TitleText>
+				<div className='w-full flex flex-col md:flex-row justify-between items-center p-4 '>
+					{projects &&
+						projects.map(project => (
+							<div key={project.id} className='w-full h-full flex justify-center items-center '>
+								<ProjectCard
+									id={project.id}
+									src={project.src}
+									title={project.title}
+									date={project.date}
+									author={project.author}
+								/>
+							</div>
+						))}
+				</div>
 			</div>
-		</div>
+		</Wrapper>
 	)
 }
 

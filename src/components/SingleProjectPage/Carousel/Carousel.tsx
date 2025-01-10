@@ -6,6 +6,7 @@ import { Swiper as SwiperType } from 'swiper'
 import { useRef, useEffect } from 'react'
 import Image from 'next/image'
 import gsap from 'gsap'
+import Wrapper from '@/components/Wrapper/Wrapper'
 
 const Carousel = ({ gallery }: { gallery: string[] }) => {
 	const swiperRef = useRef<SwiperType | null>(null)
@@ -36,39 +37,41 @@ const Carousel = ({ gallery }: { gallery: string[] }) => {
 	}, [])
 
 	return (
-		<div ref={containerRef} className='w-full flex justify-center items-center mb-8 mt-8 p-4 opacity-0'>
-			<div className='p-4 flex flex-col justify-center items-center rounded-lg overflow-hidden w-full'>
-				<div className='flex justify-between items-center w-full mb-4'>
-					<TitleText>Gallery</TitleText>
-					<CarouselButtons
-						onPrev={() => swiperRef.current?.slidePrev()}
-						onNext={() => swiperRef.current?.slideNext()}
-					/>
-				</div>
+		<Wrapper>
+			<div ref={containerRef} className='w-full flex justify-center items-center p-4 opacity-0'>
+				<div className='p-4 flex flex-col justify-center items-center rounded-lg overflow-hidden w-full'>
+					<div className='flex justify-between items-center w-full mb-4'>
+						<TitleText>Gallery</TitleText>
+						<CarouselButtons
+							onPrev={() => swiperRef.current?.slidePrev()}
+							onNext={() => swiperRef.current?.slideNext()}
+						/>
+					</div>
 
-				<Swiper
-					onSwiper={swiper => (swiperRef.current = swiper)}
-					breakpoints={{
-						0: {
-							slidesPerView: 1,
-							centeredSlides: true,
-							spaceBetween: 25,
-						},
-					}}
-					loop
-					className='w-full'>
-					{gallery.map(image => (
-						<SwiperSlide key={image}>
-							<div className='flex justify-center items-center w-full h-auto'>
-								<div className='md:w-2/3 h-full flex justify-center items-center rounded-lg overflow-hidden'>
-									<Image src={image} alt='solar farm' layout='responsive' width={1000} height={750} />
+					<Swiper
+						onSwiper={swiper => (swiperRef.current = swiper)}
+						breakpoints={{
+							0: {
+								slidesPerView: 1,
+								centeredSlides: true,
+								spaceBetween: 25,
+							},
+						}}
+						loop
+						className='w-full'>
+						{gallery.map(image => (
+							<SwiperSlide key={image}>
+								<div className='flex justify-center items-center w-full h-auto'>
+									<div className='md:w-2/3 h-full flex justify-center items-center rounded-lg overflow-hidden'>
+										<Image src={image} alt='solar farm' layout='responsive' width={1000} height={750} />
+									</div>
 								</div>
-							</div>
-						</SwiperSlide>
-					))}
-				</Swiper>
+							</SwiperSlide>
+						))}
+					</Swiper>
+				</div>
 			</div>
-		</div>
+		</Wrapper>
 	)
 }
 

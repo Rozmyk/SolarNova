@@ -4,6 +4,7 @@ import { FaSolarPanel } from 'react-icons/fa'
 import { SlEnergy } from 'react-icons/sl'
 import { MdWindPower } from 'react-icons/md'
 import gsap from 'gsap'
+import Wrapper from '@/components/Wrapper/Wrapper'
 
 const SingleTechnology = ({
 	label,
@@ -57,25 +58,27 @@ const SingleTechnology = ({
 
 const Technologies = () => {
 	return (
-		<div className='mt-20 mb-20 p-4 w-full bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[#f2fff4] to-white'>
-			<TitleText>Technologies of the project</TitleText>
-			<div className='w-full flex flex-col items-start justify-start gap-8 mt-8'>
-				<SingleTechnology
-					label='Solar Energy'
-					value='Harness free solar power with advanced photovoltaic panels.'
-					icon={FaSolarPanel}
-				/>
-				<SingleTechnology
-					label='Wind Energy'
-					value='Generate clean energy with modern wind turbines.'
-					icon={MdWindPower}
-				/>
-				<SingleTechnology
-					label='Energy Storage'
-					value='Store excess energy with state-of-the-art battery systems.'
-					icon={SlEnergy}
-				/>
-			</div>
+		<div className=' p-4 w-full bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[#f2fff4] to-white'>
+			<Wrapper>
+				<TitleText>Technologies of the project</TitleText>
+				<div className='w-full flex flex-col items-start justify-start gap-8 mt-8'>
+					<SingleTechnology
+						label='Solar Energy'
+						value='Harness free solar power with advanced photovoltaic panels.'
+						icon={FaSolarPanel}
+					/>
+					<SingleTechnology
+						label='Wind Energy'
+						value='Generate clean energy with modern wind turbines.'
+						icon={MdWindPower}
+					/>
+					<SingleTechnology
+						label='Energy Storage'
+						value='Store excess energy with state-of-the-art battery systems.'
+						icon={SlEnergy}
+					/>
+				</div>
+			</Wrapper>
 		</div>
 	)
 }

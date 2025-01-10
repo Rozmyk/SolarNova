@@ -27,11 +27,13 @@ const SingleProjectPage = ({ projectId }: { projectId: string }) => {
 		handleSearch()
 	}, [projectId])
 	return (
-		<Wrapper>
+		<div>
 			{projectLoading && !singleProjectData ? (
-				<div className='flex justify-center items-center w-full h-72'>
-					<Spinner />
-				</div>
+				<Wrapper>
+					<div className='flex justify-center items-center w-full h-72'>
+						<Spinner />
+					</div>
+				</Wrapper>
 			) : (
 				<>
 					{singleProjectData && (
@@ -48,7 +50,7 @@ const SingleProjectPage = ({ projectId }: { projectId: string }) => {
 					<OtherProjects projectId={projectId} />
 				</>
 			)}
-		</Wrapper>
+		</div>
 	)
 }
 
