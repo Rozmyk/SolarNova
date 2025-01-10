@@ -6,7 +6,11 @@ import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 
 const SingleAvatar = ({ src, alt }: { src: string; alt: string }) => {
-	return <img className='inline-block size-6 rounded-full ring-2 ring-white' src={src} alt={alt} />
+	return (
+		<div className='relative w-6 h-6 rounded-full ring-2 ring-white overflow-hidden'>
+			<Image src={src} alt={alt} layout='fill' objectFit='cover' objectPosition='center' />
+		</div>
+	)
 }
 
 const HeaderImage = () => {
