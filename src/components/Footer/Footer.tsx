@@ -3,16 +3,27 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa'
 import Newsletter from './Newsletter/Newsletter'
-const SocialIcon = ({ Icon }: { Icon: React.ComponentType<{ size?: number; className?: string }> }) => {
+
+const SocialIcon = ({
+	Icon,
+	href,
+	label,
+}: {
+	Icon: React.ComponentType<{ size?: number; className?: string }>
+	href: string
+	label: string
+}) => {
 	return (
-		<Link href={'/'} className='p-2 bg-[#132319] rounded-full flex justify-center items-center'>
+		<Link href={href} aria-label={label} className='p-2 bg-[#132319] rounded-full flex justify-center items-center'>
 			<Icon size={18} className='text-white' />
 		</Link>
 	)
 }
+
 const SectionTitle = ({ children }: { children: string }) => {
 	return <h5 className='text-lg text-white mb-4'>{children}</h5>
 }
+
 const Footer = () => {
 	return (
 		<footer className='bg-darkGreen'>
@@ -24,9 +35,9 @@ const Footer = () => {
 							We strive to be your trusted partner in the transition to a greener tomorrow
 						</p>
 						<div className='flex justify-center items-center gap-6'>
-							<SocialIcon Icon={FaFacebookF} />
-							<SocialIcon Icon={FaInstagram} />
-							<SocialIcon Icon={FaYoutube} />
+							<SocialIcon Icon={FaFacebookF} href='https://www.facebook.com' label='Facebook' />
+							<SocialIcon Icon={FaInstagram} href='https://www.instagram.com' label='Instagram' />
+							<SocialIcon Icon={FaYoutube} href='https://www.youtube.com' label='YouTube' />
 						</div>
 					</div>
 					<div className='flex flex-col  items-center md:items-start mb-4 gap-4 text-sm'>
@@ -43,26 +54,9 @@ const Footer = () => {
 						<Link href='/'>License</Link>
 						<Link href='/'>Changelog</Link>
 					</div>
-					<div className='flex flex-col items-center md:items-start mb-4 text-sm'>
+					<div className='flex flex-col items-center md:items-start mb-4 gap-4 text-sm'>
 						<SectionTitle>Newsletter</SectionTitle>
 						<Newsletter />
-
-						<p className='text-sm text-center md:text-start'>
-							We are committed to not share your email or privacy with anyone
-						</p>
-					</div>
-				</div>
-
-				<div className='flex md:flex-row flex-col gap-4 justify-between items-center mt-40 text-[#c6cbc9] p-8 text-sm border-t border-[#0f2316]'>
-					<p>Copyright all rights reserved</p>
-					<div className='flex gap-2 justify-center items-center '>
-						<Link href={'/privacy-policy'} className='hover:text-white'>
-							Privacy policy
-						</Link>
-						<p>|</p>
-						<Link href={'/terms'} className='hover:text-white'>
-							Terms & conditions
-						</Link>
 					</div>
 				</div>
 			</Wrapper>
