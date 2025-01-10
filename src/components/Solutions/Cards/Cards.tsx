@@ -38,7 +38,9 @@ const SingleCard = ({ src, icon: Icon, title, text }: SingleCardProps) => {
 				</div>
 			</div>
 
-			<button className='w-12 h-12 bg-primary rounded-full flex justify-center items-center absolute bottom-0 right-0 z-20'>
+			<button
+				aria-label={`Learn more about ${title}`}
+				className='w-12 h-12 bg-primary rounded-full flex justify-center items-center absolute bottom-0 right-0 z-20'>
 				<GoArrowUpRight size={20} />
 			</button>
 
