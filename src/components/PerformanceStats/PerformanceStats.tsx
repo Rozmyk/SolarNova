@@ -76,22 +76,12 @@ const SingleNumberedTile = ({ number, title }: { number: number; title: string }
 }
 
 const PerformanceStats = () => {
-	const containerRef = useRef<HTMLDivElement>(null)
+	const containerRef = useRef<HTMLDivElement | null>(null)
 
 	useEffect(() => {
-		gsap.registerPlugin()
-
 		if (containerRef.current) {
-			gsap.set(containerRef.current.children, { opacity: 0, y: 50 })
-
 			const animate = (target: Element) => {
-				gsap.to(target.children, {
-					opacity: 1,
-					y: 0,
-					duration: 0.5,
-					stagger: 0.2,
-					ease: 'power2.out',
-				})
+				gsap.fromTo(target, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1, ease: 'power2.out' })
 			}
 
 			const observer = new IntersectionObserver(
@@ -121,7 +111,13 @@ const PerformanceStats = () => {
 					ref={containerRef}
 					className='w-full flex flex-col md:flex-row justify-between items-center gap-10 relative z-10 p-4'>
 					<div className='w-full md:w-1/2 h-96 relative rounded-lg overflow-hidden'>
-						<Image src={'/stats/statsImage.webp'} fill alt='wind turbine on desert' />
+						<Image
+							src='/stats/statsImage.webp'
+							layout='fill'
+							objectFit='cover'
+							objectPosition='center'
+							alt='wind turbine on desert'
+						/>
 					</div>
 					<div className='w-full md:w-1/2 flex flex-col'>
 						<div className='flex md:flex-row flex-col justify-between items-center'>
