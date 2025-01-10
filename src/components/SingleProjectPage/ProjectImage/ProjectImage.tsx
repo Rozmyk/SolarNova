@@ -5,6 +5,8 @@ import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import TitleText from '@/components/ui/TitleText/TitleText'
 import Button from '@/components/ui/Button/Button'
+import { GoCircle } from 'react-icons/go'
+import { PiDotsNineThin } from 'react-icons/pi'
 
 const ProjectImage = ({ title, description, src }: { title: string; description: string; src: string }) => {
 	const router = useRouter()
@@ -31,6 +33,9 @@ const ProjectImage = ({ title, description, src }: { title: string; description:
 
 	return (
 		<div className='relative w-full p-4 mb-72 md:mb-0'>
+			<div className='absolute -right-44 -top-20 z-0 opacity-5 '>
+				<PiDotsNineThin color='black' size={300} />
+			</div>
 			<div ref={imageRef} className='w-full md:w-3/4 h-96 relative rounded-lg overflow-hidden'>
 				<Image fill src={src} alt='solar farm' style={{ objectFit: 'cover', objectPosition: 'center' }} />
 			</div>
@@ -38,6 +43,7 @@ const ProjectImage = ({ title, description, src }: { title: string; description:
 				<div ref={titleRef}>
 					<TitleText>{title}</TitleText>
 				</div>
+
 				<p ref={descriptionRef} className='text-[#6f6e6e] text-sm mb-4'>
 					{description}
 				</p>
