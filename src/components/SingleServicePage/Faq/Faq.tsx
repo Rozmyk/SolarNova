@@ -4,7 +4,7 @@ import { faqItemProps } from '@/types'
 
 const Faq = ({ items }: { items: faqItemProps[] }) => {
 	return (
-		<div className='p-4'>
+		<div className='p-4 mb-20 mt-8'>
 			<TitleText>FAQ</TitleText>
 			<FaqSection items={items} />
 		</div>

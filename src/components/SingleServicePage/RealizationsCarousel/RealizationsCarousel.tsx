@@ -56,7 +56,7 @@ const RealizationsCarousel = ({ gallery }: { gallery: string[] }) => {
 		}
 	}, [])
 	return (
-		<div className='p-4 mb-8 mt-8'>
+		<div className='p-4 mb-20 mt-8'>
 			<TitleText>Our realizations </TitleText>
 			<div ref={realizationContainer}>
 				<Swiper

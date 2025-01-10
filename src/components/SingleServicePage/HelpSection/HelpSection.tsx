@@ -55,7 +55,7 @@ const HelpSection = () => {
 	}, [])
 
 	return (
-		<div ref={sectionRef} className='p-8'>
+		<div ref={sectionRef} className='p-8 mb-20 mt-8'>
 			<TitleText>How can we help you?</TitleText>
 			<div className='flex flex-col md:flex-row justify-between items-center gap-8 mt-8 mb-8'>
 				<SingleCard
