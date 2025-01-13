@@ -91,7 +91,7 @@ const ProjectsPage = () => {
 							local communities and economies.
 						</p>
 					</div>
-					<div className='grid w-full gap-8 max-w-screen-lg grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-8'>
+					<div className='grid w-full gap-8 max-w-screen-lg grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-8 p-4'>
 						{sortedProjects.map((project, index) => (
 							<div
 								ref={cardRefs.current[index]}
