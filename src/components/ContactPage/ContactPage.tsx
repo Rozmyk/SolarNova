@@ -87,7 +87,7 @@ const ContactPage = () => {
 		}
 	}, [])
 	return (
-		<div className='overflow-hidden relative '>
+		<div className='overflow-hidden relative md:mb-20 md:mt-20 '>
 			<div className='absolute   rotate-12 top-20 right-64' style={{ opacity: 0.02 }}>
 				<RxDragHandleDots1 color='black' size={250} />
 			</div>
