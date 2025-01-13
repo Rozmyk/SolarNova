@@ -19,7 +19,7 @@ const projectData: ProjectProps[] = [
 	{
 		id: 'project-2',
 		src: '/projects/projectImage2.webp',
-		title: 'Offshore Wind Turbine Development',
+		title: 'Offshore Wind Turbine',
 		date: new Date('November 10, 2024').getTime(),
 		author: 'Sophia Green',
 		description: 'Building state-of-the-art offshore wind turbines for sustainable energy generation.',
