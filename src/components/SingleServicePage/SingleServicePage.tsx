@@ -30,11 +30,11 @@ const SingleServicePage = ({ serviceId }: { serviceId: string }) => {
 			) : (
 				singleServiceData && (
 					<>
-						<div className='flex justify-between flex-col-reverse md:flex-row items-center gap-20 p-4 mb-20'>
+						<div className='flex justify-between flex-col-reverse md:flex-row items-center gap-20 p-4 mb-14'>
 							<HeaderContent title={singleServiceData.text} />
 							<HeaderImage src={singleServiceData.src} />
 						</div>
-						<div className='p-4 mb-20 mt-8'>
+						<div className='p-4 mb-8 mt-8'>
 							<p className='text-secondary font-semibold text-center'>{singleServiceData.description}</p>
 						</div>
 						<HelpSection />
